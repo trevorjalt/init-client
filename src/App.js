@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import './css/variables.css';
 import './css/main.css';
+import Header from './components/header';
 import Yo from './routes/yo';
 import Feed from './routes/feed';
 import Account from './routes/account';
@@ -28,6 +29,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <header>
+          <Header />
+        </header>
         <main className='App-Main'>{this.renderRoutes()}</main>
       </div>
     );
