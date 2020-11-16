@@ -1,8 +1,10 @@
 Le Gist https://gist.github.com/Rachanastasia/a4e4121a82b6cbb9ea13b83c7ef37bc6
 
-Le Repo
+Le Repo https://github.com/trevorjalt/init-client
 
-Le Other Repo
+Le Other Repo https://github.com/trevorjalt/init-api
+
+Le Wireframes https://github.com/Rachanastasia/init-wireframes
 
 # Getting Started with Create React App
 
