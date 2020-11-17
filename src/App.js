@@ -12,30 +12,30 @@ import Login from './routes/login';
 import Registration from './routes/registration';
 
 class App extends Component {
-  renderRoutes() {
-    return (
-      <>
-        <Route exact path={'/'} component={Yo} />
-        <Route exact path={'/feed'} component={Feed} />
-        <Route path={'/account'} component={Account} />
-        <Route path={'/settings'} component={Settings} />
-        <Route path={'/newProject'} component={NewProject} />
-        <Route path={'/login'} component={Login} />
-        <Route path={'/registration'} component={Registration} />
-      </>
-    );
-  };
+    renderRoutes() {
+        return (
+            <>
+                <Route exact path={'/'} component={Yo} />
+                <Route exact path={'/feed'} component={Feed} />
+                <Route path={'/account'} component={Account} />
+                <Route path={'/settings'} component={Settings} />
+                <Route path={'/newProject'} component={NewProject} />
+                <Route path={'/login'} component={Login} />
+                <Route path={'/registration'} component={Registration} />
+            </>
+        );
+    };
 
-  render() {
-    return (
-      <div className="App">
-        <header>
-          <Header />
-        </header>
-        <main className='App-Main'>{this.renderRoutes()}</main>
-      </div>
-    );
-  };
+    render() {
+        return (
+            <div className="App">
+                <header>
+                    <Header />
+                </header>
+                <main className='App-Main'>{this.renderRoutes()}</main>
+            </div>
+        );
+    };
 };
 
 export default App;
