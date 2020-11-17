@@ -1,4 +1,5 @@
 import React from 'react';
+import './Footer.css';
 import HiveFeed from './Images/feed-logo.png';
 import Swarm from './Images/connect-logo.png';
 import Buzz from './Images/notification-logo.png';
@@ -6,10 +7,9 @@ import Account from './Images/profile-logo.png';
 
 export default class Footer extends Component {
 
-
-    renderHiveFeedIcon() {
+    renderFooterLoggedIn() {
         return (
-            <div className='footer__logged-in'>
+            <div className='Footer__logged-in'>
                 <Link
                     to='/feed'
                     className='navItem'
@@ -29,7 +29,7 @@ export default class Footer extends Component {
                     <img src={Buzz} alt='Buzz link logo' className='navIcon'></img>
                 </Link>
                 <Link
-                    to='/account'
+                    to='/Portfolio'
                     className='navItem'
                 >
                     <img src={Account} alt='Account link logo' className='navIcon'></img>
@@ -37,6 +37,28 @@ export default class Footer extends Component {
             </div>
         )
     }
+
+    renderLoggedOut() {
+        return (
+            <div className='Footer__logged-in'>
+                <Link
+                    to='/login'
+                    className='navItem'
+                >
+                    <img src={Account} alt='Account link logo' className='navIcon'></img>
+                    <p className='navItem__text'>logIn</p>
+                </Link>
+            </div>
+        )
+    }
+
+    render() {
+        return (
+            <nav className='Footer'>                          
+                {TokenService.hasAuthToken()
+                    ? this.renderFooterLoggedIn()
+                    : this.renderLoggedOut()}                 
+            </nav>        
+        )
+    }
 }
-
-
