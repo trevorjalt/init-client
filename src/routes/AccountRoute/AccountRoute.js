@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import '../css/variables.css';
-import '../css/main.css';
+
 
 class Account extends Component {
   render() {

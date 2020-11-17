@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import '../css/variables.css';
-import '../css/main.css';
-import Gallery from '../components/gallery/gallery';
-import ProfileTop from '../components/profileTop/profileTop';
+import Gallery from '../../components/gallery/gallery';
+import ProfileTop from '../../components/profileTop/profileTop';
 
 class Portfolio extends Component {
   render() {
