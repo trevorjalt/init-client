@@ -1,9 +1,11 @@
-import React from 'react';
+import React, {Component} from 'react';
+import { Link } from 'react-router-dom';
 import './Footer.css';
 import HiveFeed from './Images/feed-logo.png';
 import Swarm from './Images/connect-logo.png';
 import Buzz from './Images/notification-logo.png';
 import Account from './Images/profile-logo.png';
+import TokenService from  '../../services/token-service';
 
 export default class Footer extends Component {
 
