@@ -3,3 +3,7 @@ main {
     background-color: var(--colors-white);
     color: var(--colors-black);
 }
+
+a{
+    text-decoration: none;
+}
