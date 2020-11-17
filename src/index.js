@@ -6,13 +6,12 @@ import { UserProvider } from './contexts/userContext';
 import { OtherProvider } from './contexts/otherContext';
 
 ReactDOM.render(
-  <BrowserRouter>
-    <UserProvider>
-      <OtherProvider>
-        <App />
-      </OtherProvider>
-    </UserProvider>
-  </BrowserRouter>,
-  document.getElementById('root')
+    <BrowserRouter>
+        <UserProvider>
+            <OtherProvider>
+                <App />
+            </OtherProvider>
+        </UserProvider>
+    </BrowserRouter>,
+    document.getElementById('root')
 );
-

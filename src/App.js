@@ -12,6 +12,7 @@ import Account from './routes/AccountRoute/AccountRoute';
 import NewProject from './routes/NewProjectRoute/NewProjectRoute';
 import Login from './routes/LoginRoute/LoginRoute';
 import Registration from './routes/RegistrationRoute/RegistrationRoute';
+import Footer from './components/Footer/Footer';
 
 class App extends Component {
     renderRoutes() {
@@ -26,6 +27,7 @@ class App extends Component {
                 <Route path={'/newProject'} component={NewProject} />
                 <Route path={'/login'} component={Login} />
                 <Route path={'/registration'} component={Registration} />
+                <Footer />
             </>
         );
     };
