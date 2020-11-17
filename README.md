@@ -1,3 +1,11 @@
+Le Gist https://gist.github.com/Rachanastasia/a4e4121a82b6cbb9ea13b83c7ef37bc6
+
+Le Repo https://github.com/trevorjalt/init-client
+
+Le Other Repo https://github.com/trevorjalt/init-api
+
+Le Wireframes https://github.com/Rachanastasia/init-wireframes
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
