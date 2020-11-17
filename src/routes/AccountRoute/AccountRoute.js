@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../css/variables.css';
 import '../css/main.css';
 
-class Settings extends Component {
+class Account extends Component {
   render() {
     return (
       <div>
@@ -12,4 +12,4 @@ class Settings extends Component {
   };
 };
 
-export default Settings;
+export default Account;
