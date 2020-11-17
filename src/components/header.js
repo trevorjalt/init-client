@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import '../css/variables.css';
-import '../css/main.css';
 import HAHA from '../HAHA.jpg';
 
 class Header extends Component {
