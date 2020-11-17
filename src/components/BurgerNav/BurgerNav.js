@@ -4,12 +4,11 @@ import { Link } from 'react-router-dom';
 function OpenNav() {
     return (
         <div>
-            <div className='wrapper'>
-                <div className='burger-icon'>
-                    <div className='burger-nav-top burger-nav-top-open burger-nav'></div>
-                    <div className='burger-nav-bottom burger-nav-bottom-open burger-nav'></div>
-                </div>
+            <div className='burger-icon'>
+                <div className='burger-nav-top burger-nav-top-open burger-nav'></div>
+                <div className='burger-nav-bottom burger-nav-bottom-open burger-nav'></div>
             </div>
+
             <nav role='navigation'>
                 <span className='navigation-item'>
                     <Link to='/login' className='navigation-link'>Login</Link>
@@ -33,6 +32,7 @@ function CloseNav() {
 }
 
 function BurgerNav() {
+
     const [showNav, setShowNav] = useState(false)
 
     return (
