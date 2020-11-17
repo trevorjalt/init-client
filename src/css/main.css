@@ -4,6 +4,10 @@ main {
     color: var(--colors-black);
 }
 
+h1{
+    color: var(--colors-accent);
+}
+
 a{
     text-decoration: none;
 }

@@ -5,8 +5,8 @@ function OpenNav() {
     return (
         <div>
             <div className='burger-icon'>
-                <div className='burger-nav-top burger-nav-top-open burger-nav'></div>
-                <div className='burger-nav-bottom burger-nav-bottom-open burger-nav'></div>
+                <div className='burger-nav-top nav-item burger-nav-top-open burger-nav'></div>
+                <div className='burger-nav-bottom nav-item burger-nav-bottom-open burger-nav'></div>
             </div>
 
             <nav role='navigation'>
@@ -24,9 +24,9 @@ function OpenNav() {
 function CloseNav() {
     return (
         <div className='burger-icon'>
-            <div className='burger-nav-top burger-nav'></div>
-            <div className='burger-nav-middle burger-nav'></div>
-            <div className='burger-nav-bottom burger-nav'></div>
+            <span className='burger-nav-top burger-nav'></span>
+            <span className='burger-nav-middle burger-nav'></span>
+            <span className='burger-nav-bottom burger-nav'></span>
         </div>
     )
 }

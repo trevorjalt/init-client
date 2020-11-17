@@ -7,35 +7,35 @@ import Fluent from '../../pictures/fluent-app-full-page-view.png';
 class Gallery extends Component {
   render() {
     return (
-    <div className='gallery-wrapper'>
-      <img className='gallery-img' src={Benchmark} alt='Benchmark' />
-      <img className='gallery-img' src={Fluent} alt='Fluent' />
-      <img className='gallery-img' src={Benchmark} alt='Benchmark' />
-      <img className='gallery-img' src={Fluent} alt='Fluent' />
-      <img className='gallery-img' src={Benchmark} alt='Benchmark' />
-      <img className='gallery-img' src={Fluent} alt='Fluent' />
-      <img className='gallery-img' src={Benchmark} alt='Benchmark' />
-      <img className='gallery-img' src={Fluent} alt='Fluent' />
-      <img className='gallery-img' src={Benchmark} alt='Benchmark' />
-      <img className='gallery-img' src={Fluent} alt='Fluent' />
-      <img className='gallery-img' src={Benchmark} alt='Benchmark' />
-      <img className='gallery-img' src={Fluent} alt='Fluent' />
-      <img className='gallery-img' src={Benchmark} alt='Benchmark' />
-      <img className='gallery-img' src={Fluent} alt='Fluent' />
-      <img className='gallery-img' src={Benchmark} alt='Benchmark' />
-      <img className='gallery-img' src={Fluent} alt='Fluent' />
-      <img className='gallery-img' src={Benchmark} alt='Benchmark' />
-      <img className='gallery-img' src={Fluent} alt='Fluent' />
-      <img className='gallery-img' src={Benchmark} alt='Benchmark' />
-      <img className='gallery-img' src={Fluent} alt='Fluent' />
-      <img className='gallery-img' src={Benchmark} alt='Benchmark' />
-      <img className='gallery-img' src={Fluent} alt='Fluent' />
-      <img className='gallery-img' src={Benchmark} alt='Benchmark' />
-      <img className='gallery-img' src={Fluent} alt='Fluent' />
-      <img className='gallery-img' src={Benchmark} alt='Benchmark' />
-      <img className='gallery-img' src={Fluent} alt='Fluent' />
-      <img className='gallery-img' src={Benchmark} alt='Benchmark' />
-    </div>
+      <div className='gallery-wrapper'>
+        <img className='gallery-img' src={Benchmark} alt='Benchmark' />
+        <img className='gallery-img' src={Fluent} alt='Fluent' />
+        <img className='gallery-img' src={Benchmark} alt='Benchmark' />
+        <img className='gallery-img' src={Fluent} alt='Fluent' />
+        <img className='gallery-img' src={Benchmark} alt='Benchmark' />
+        <img className='gallery-img' src={Fluent} alt='Fluent' />
+        <img className='gallery-img' src={Benchmark} alt='Benchmark' />
+        <img className='gallery-img' src={Fluent} alt='Fluent' />
+        <img className='gallery-img' src={Benchmark} alt='Benchmark' />
+        <img className='gallery-img' src={Fluent} alt='Fluent' />
+        <img className='gallery-img' src={Benchmark} alt='Benchmark' />
+        <img className='gallery-img' src={Fluent} alt='Fluent' />
+        <img className='gallery-img' src={Benchmark} alt='Benchmark' />
+        <img className='gallery-img' src={Fluent} alt='Fluent' />
+        <img className='gallery-img' src={Benchmark} alt='Benchmark' />
+        <img className='gallery-img' src={Fluent} alt='Fluent' />
+        <img className='gallery-img' src={Benchmark} alt='Benchmark' />
+        <img className='gallery-img' src={Fluent} alt='Fluent' />
+        <img className='gallery-img' src={Benchmark} alt='Benchmark' />
+        <img className='gallery-img' src={Fluent} alt='Fluent' />
+        <img className='gallery-img' src={Benchmark} alt='Benchmark' />
+        <img className='gallery-img' src={Fluent} alt='Fluent' />
+        <img className='gallery-img' src={Benchmark} alt='Benchmark' />
+        <img className='gallery-img' src={Fluent} alt='Fluent' />
+        <img className='gallery-img' src={Benchmark} alt='Benchmark' />
+        <img className='gallery-img' src={Fluent} alt='Fluent' />
+        <img className='gallery-img' src={Benchmark} alt='Benchmark' />
+      </div>
     );
   };
 };
