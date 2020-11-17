@@ -4,7 +4,7 @@ import '../css/main.css';
 import Gallery from '../components/gallery/gallery';
 import ProfileTop from '../components/profileTop/profileTop';
 
-class Account extends Component {
+class Portfolio extends Component {
   render() {
     return (
       <section>
@@ -22,4 +22,4 @@ class Account extends Component {
   };
 };
 
-export default Account;
+export default Portfolio;
