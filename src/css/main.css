@@ -1,10 +1,29 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
 main {
     width: 100%;
     background-color: var(--colors-white);
     color: var(--colors-black);
+    font-family: var(--font);
+    
 
 }
 
+section{
+    width: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+button{
+    font-size: var(--font-size-sm);
+    font-family: var(--font);
+}
 h1{
     color: var(--colors-accent);
 }
@@ -12,6 +31,7 @@ h1{
 a{
     text-decoration: none;
 }
+
 
 .error-message {
     color: var(--colors-red);
@@ -97,7 +117,7 @@ a{
     display: flex;
     flex-wrap: wrap;
     padding: var(--spacer-lg);
-    margin-left: 9px;
+    
 }
 
 .gallery-img {

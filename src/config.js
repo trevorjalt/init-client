@@ -13,3 +13,11 @@ export default {
     API_ENDPOINT: apiPath,
     TOKEN_KEY: tokenKey,
 }
+
+
+/* LOGIN INFO
+Time Traveller Trunks
+
+ssRAGE2!
+
+*/
