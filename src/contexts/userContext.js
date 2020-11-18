@@ -4,12 +4,12 @@ import TokenService from '../services/token-service'
 import IdleService from '../services/idle-service'
 
 const UserContext = React.createContext({
-    file: {},
+    data: {},
     user: {},
     error: null,
     setError: () => {},
     clearError: () => {},
-    setFile: () => {},
+    setData: () => {},
     setUser: () => {},
     processLogin: () => {},
     processLogout: () => {},
@@ -22,7 +22,7 @@ export class UserProvider extends Component {
         super(props)
         
         const state = { 
-            file: {},
+            data: {},
             user: {}, 
             error: null 
         }
@@ -63,8 +63,9 @@ export class UserProvider extends Component {
         this.setState({ error: null })
     }
 
-    setFile = file => {
-        this.setState({ file })
+    setData = data => {
+        console.log('setting data', data)
+        this.setState({ data })
     }
 
     setUser = user => {
@@ -114,12 +115,12 @@ export class UserProvider extends Component {
 
     render() {
         const value = {
-            file: this.state.file,
+            data: this.state.data,
             user: this.state.user,
             error: this.state.error,
             setError: this.setError,
             clearError: this.clearError,
-            setFile: this.setFile,
+            setData: this.setData,
             setUser: this.setUser,
             processLogin: this.processLogin,
             processLogout: this.processLogout,

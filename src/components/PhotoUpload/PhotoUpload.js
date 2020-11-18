@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import AuthApiService from '../../services/auth-api-service'
+// import AuthApiService from '../../services/auth-api-service'
 import UserContext from '../../contexts/userContext'
 import '../../css/Form.css'
 
@@ -24,7 +24,7 @@ class PhotoUpload extends Component {
     }
 
     changeFile = (ev) => {
-        const { setFile } = this.context
+        const { setData } = this.context
 
         if(this.checkExtension(ev.target.files[0].name)) {
             this.readFile(ev.target.files[0]).then(file=>{
@@ -38,7 +38,7 @@ class PhotoUpload extends Component {
                 } else {
                 this.setState({ error: 'File Size Larger Than 1MB' })
                 }
-                setFile(this.state.file)
+                setData(this.state.data)
             }).catch(err=>{
                 console.log('ERROR:-', err)
                 this.setState({ error: err })

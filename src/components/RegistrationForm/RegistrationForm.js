@@ -21,7 +21,8 @@ class RegistrationForm extends Component {
     handleSubmit = ev => {
         ev.preventDefault()
 
-        const { file } = this.context
+        const { data } = this.context
+
         const { 
             fullname, 
             username, 
@@ -43,8 +44,7 @@ class RegistrationForm extends Component {
                 username: username.value,
                 user_password: user_password.value,
                 email: email.value,
-                // need to figure out how to send this object to the server
-                profile_photo: file,
+                profile_photo: data,
                 about_user: about_user.value,
                 user_stack: user_stack.value
             })
