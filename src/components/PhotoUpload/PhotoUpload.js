@@ -35,10 +35,11 @@ class PhotoUpload extends Component {
                     file: file.file,
                     error: null
                 }))
+                console.log('file', file.file.slice(0, 1))
                 } else {
                 this.setState({ error: 'File Size Larger Than 1MB' })
                 }
-                setData(this.state.data)
+                setData(this.state.file)
             }).catch(err=>{
                 console.log('ERROR:-', err)
                 this.setState({ error: err })
