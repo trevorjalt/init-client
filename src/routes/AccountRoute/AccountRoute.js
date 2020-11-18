@@ -11,9 +11,6 @@ class Account extends Component {
 
     static contextType = UserContext
 
-    // componentDidMount() {}
-  
-
     render() {
         const { user } = this.context
             console.log(user)
@@ -23,32 +20,27 @@ class Account extends Component {
                 <p>info</p>
                     <form className='account-form'>
                         <fieldset>
-                          <legend><h3>fullName</h3></legend>
-                          <label htmlFor="fname"></label>
-                          <span>Adyceum</span>
+                            <legend><h3>fullName</h3></legend>
+                            <span>{ user.fullname }</span>
                         </fieldset>
                         <fieldset>
-                          <legend><h3>userName</h3></legend>
-                          <label htmlFor="fname"></label>
-                          <span>Adyceum</span>
+                            <legend><h3>userName</h3></legend>
+                            <span>{ user.username }</span>
                         </fieldset>
                         <fieldset>
-                          <legend><h3>eMail</h3></legend>
-                          <label htmlFor="fname"></label>
-                          <span>AMC@gmail.com</span>
+                            <legend><h3>eMail</h3></legend>
+                            <span>{ user.email }</span>
                         </fieldset>
                         <fieldset>
-                          <legend><h3>about</h3></legend>
-                          <label htmlFor="fname"></label>
-                          <span>Adyceum</span>
+                            <legend><h3>about</h3></legend>
+                            <span>{ user.about_user }</span>
                         </fieldset>
                         <fieldset>
-                          <legend><h3>stack</h3></legend>
-                          <label htmlFor="fname"></label>
-                          <span>full-stack</span>
+                            <legend><h3>stack</h3></legend>
+                            <span>{ user.user_stack }</span>
                         </fieldset>
                     </form>
-            </div>
+                </div>
         );
     }
 };
