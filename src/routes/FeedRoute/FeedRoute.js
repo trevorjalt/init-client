@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
-import '../css/variables.css';
-import '../css/main.css';
+import UserContext from '../../contexts/userContext'
+
 
 class Feed extends Component {
-  render() {
-    return (
-      <div>
-        <h1>Le Feed</h1>
-      </div>
-    );
-  };
+    static contextType = UserContext
+
+    render() {
+        const { user } = this.context
+        console.log(user) 
+        return (
+            <div>
+                <h1>Le Feed</h1>
+            </div>
+        );
+    };
 };
 
 export default Feed;
