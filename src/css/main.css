@@ -22,6 +22,7 @@ section{
 }
 button{
     font-size: var(--font-size-sm);
+    font-family: var(--font);
 }
 h1{
     color: var(--colors-accent);
