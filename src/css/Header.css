@@ -22,6 +22,9 @@ header{
 
 .add-logo{
     height: 12vh;
+    position: relative;
+    right: var(--spacer-sm);
+
 }
 
 /* .add-logo-focus{
@@ -35,14 +38,15 @@ header{
 
 .header-icons{
     display: flex;
-    width: 170px;
+    width: 130px;
+    padding-right: var(--spacer-sm);
 }
 
 .burger-wrapper{
     width: 43px;
     height: 33px;
     position: relative;
-    top: 24px;
+    top: 20px;
     right: 0px;
     transform: rotate(0deg);
     transition: .5s ease-in-out;
