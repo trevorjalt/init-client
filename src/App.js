@@ -36,6 +36,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <main className='App-Main'>{this.renderRoutes()}</main>
+        <Footer />
       </div>
     );
   };
