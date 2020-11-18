@@ -16,7 +16,7 @@ function Header() {
                 ? <h1>{userContext.username}</h1>
                 : <h1>init</h1>}
             <div className='header-icons'>
-                <Link to='/newProject'>
+                <Link to='/newProject' className='add-logo-focus'>
                     <img className='add-logo' src={addLogo} />
                 </Link>
                 <BurgerNav />

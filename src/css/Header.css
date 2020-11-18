@@ -20,6 +20,15 @@ header{
     height: 12vh;
 }
 
+/* .add-logo-focus{
+    outline: 0;
+}
+
+.add-logo-focus:focus{
+    border: 2px solid var(--colors-accent-light);
+    border-radius: 2px;
+} */
+
 .header-icons{
     display: flex;
     width: 140px;
@@ -29,13 +38,17 @@ header{
     width: 43px;
     height: 33px;
     position: relative;
-    top: 22px;
+    top: 18px;
     left: 25px;
     transform: rotate(0deg);
     transition: .5s ease-in-out;
     cursor: pointer;
     margin-right: 1vw;
+    display: flex;
+    justify-content: center;
 }
+
+
 
 .burger-line{
     display: block;
@@ -83,9 +96,9 @@ display: none;
 }
 
 .navigation{
-    position: fixed;
-    top: 10px;
-    left: 50vw;
+    position: absolute;
+    top: 5vh;
+    left: 40vw;
 }
 
 
@@ -95,11 +108,11 @@ display: none;
     position: absolute;
     text-align: left;
     height: 20px;
-    width: 50vw;
-    background-color: var(--colors-accent-light);
-    font-size: var(--fontsize-sm);
+    width: 60vw;
     padding: var(--spacer-sm);
-   
+    background-color: var(--colors-accent-light);
+    font-size: var(--font-size-sm);
+  
 }
 
 .nav-item-one{
