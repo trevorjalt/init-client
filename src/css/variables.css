@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+
 :root{
     --colors-accent-light: #E0AAEF;
     --colors-accent: #280079;
@@ -11,7 +13,7 @@
 
     --font-size-sm: 18px;
 
-    --font: "Verdana", sans-serif;
+    --font: "Courier Prime", serif;
 }
 
 @media all and (min-width: 500px){

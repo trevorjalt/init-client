@@ -14,6 +14,11 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: var(--font);
 }
 
 .add-logo{
@@ -31,19 +36,18 @@ header{
 
 .header-icons{
     display: flex;
-    width: 140px;
+    width: 150px;
 }
 
 .burger-wrapper{
     width: 43px;
     height: 33px;
     position: relative;
-    top: 18px;
-    left: 25px;
+    top: 24px;
+    left: 1vh;
     transform: rotate(0deg);
     transition: .5s ease-in-out;
     cursor: pointer;
-    margin-right: 1vw;
     display: flex;
     justify-content: center;
 }
@@ -98,21 +102,20 @@ display: none;
 .navigation{
     position: absolute;
     top: 5vh;
-    left: 40vw;
+    right: 0;
+    width: 40vw;
 }
-
-
 
 .navigation-item{
     animation: .25s ease-in 0s 1 slideInFromRight;
     position: absolute;
     text-align: left;
-    height: 20px;
-    width: 60vw;
-    padding: var(--spacer-sm);
+    height: 50px;
+    width: inherit;
     background-color: var(--colors-accent-light);
+    padding: var(--spacer-sm);
     font-size: var(--font-size-sm);
-  
+  overflow-block: none;
 }
 
 .nav-item-one{
@@ -125,10 +128,18 @@ display: none;
 
 }
 
+.nav-item-three{
+    top: 160px;
+}
+
 @media all and (min-width: 500px){
+
 h1{
     padding-left: var(--spacer-sm)
 }
  
  }
+
+
+
  
