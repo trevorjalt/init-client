@@ -1,0 +1,43 @@
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input, textarea, select {
+    padding: 1vh 0 1vh 0;
+    margin-top: 1vh;
+    display: flex;
+    flex-direction: column;
+    width: 85vw;
+    margin: 1vh 0 1vh 0;
+    font-size: 2.2vh;
+}
+
+label {
+    font-size: 2.2vh;
+}
+
+.form-wrapper {
+    text-align: right;
+}
+
+.form-button {
+    display: flex;
+    flex-direction: column;
+    width: 85vw;
+    margin-top: 2vh;
+    font-size: 2.2vh;
+    align-items: center;
+    justify-content: center;  
+}
+
+.preview-photo {
+    width: 85vw;
+}
+
+@media only screen and (min-width: 800px) {
+    input, textarea, select, .form-button, .preview-photo {
+        width: 70vw;
+    }
+}

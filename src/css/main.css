@@ -12,6 +12,13 @@ h1{
 a{
     text-decoration: none;
 }
+
+.error-message {
+    color: var(--colors-red);
+    width: 85vw;;
+    text-align: center;
+}
+
 .hex-wrapper {
     display: flex;
     flex: auto;
@@ -46,6 +53,13 @@ a{
 .hexagon::after {
     top: 100%;
     border-top: 28.8px solid var(--colors-accent);
+}
+
+.login-route, .registration-route {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 .p-wrapper {
@@ -92,20 +106,20 @@ a{
     border: 1px solid var(--colors-black);
 }
 
-.login_buttons {
+/* .login_buttons {
     width: inherit;
     display: flex;
 }
 
 .login_buttons button {
     width: 100%;
-}
+} */
 
 .signup {
     background-color: var(--colors-muted);
 }
 
-button {
+button, .button {
     cursor: pointer;
     outline: 0;
     height: 40px;
@@ -123,4 +137,10 @@ button:focus {
 
 .login {
     margin-top: var(--spacer-sm);
+}
+
+@media only screen and (min-width: 800px) {
+    .error-message {
+        width: 70vw;
+    }
 }
