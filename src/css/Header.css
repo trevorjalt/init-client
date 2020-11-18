@@ -55,6 +55,10 @@ header{
     justify-content: center;
 }
 
+.burger-wrapper:active{
+    outline: 0;
+}
+
 
 
 .burger-line{
