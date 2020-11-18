@@ -6,7 +6,6 @@
 
 main {
     width: 100%;
-    background-color: var(--colors-white);
     color: var(--colors-black);
     font-family: var(--font);
 }

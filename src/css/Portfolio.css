@@ -6,7 +6,7 @@
 
 .p-wrapper {
     display: flex;
-    text-align: center;
+    text-align: left;
     justify-content: flex-start;
     align-items: center;
 }

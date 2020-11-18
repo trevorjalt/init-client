@@ -7,7 +7,7 @@ ul.Footer {
     align-items: center;
     text-align: center;
     justify-content: space-between;;
-    background-color: #eec6f9;
+    background-color: var(--colors-accent-light);
     padding: 1vw 2vw 1vw 2vw;
     margin-bottom: 4vh;
     text-decoration: none;

@@ -17,7 +17,9 @@ function Header() {
                 : <h1>init</h1>}
             <div className='header-icons'>
                 <Link to='/newProject' className='add-logo-focus'>
-                    <img className='add-logo' src={addLogo} />
+                    <img className='add-logo'
+                        src={addLogo}
+                        alt='add new post' />
                 </Link>
                 <BurgerNav />
             </div>
