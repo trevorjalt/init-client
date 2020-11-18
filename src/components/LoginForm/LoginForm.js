@@ -18,8 +18,6 @@ class LoginForm extends Component {
         ev.preventDefault()
         
         const { username, user_password } = ev.target
-        console.log('username', username.value)
-        console.log('password', user_password.value)
 
         this.setState({ error: null })
 

@@ -48,6 +48,7 @@ class RegistrationForm extends Component {
                 about_user: about_user.value,
                 user_stack: user_stack.value
             })
+                .then(req => console.log(req))
                 .then(user => {
                     fullname.value = ''
                     username.value = ''
@@ -73,6 +74,7 @@ class RegistrationForm extends Component {
         return (
             <form
                 className='registration-form'
+                encType='multipart/form-data'
                 onSubmit={this.handleSubmit}
             >
                 <div 
