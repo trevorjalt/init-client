@@ -13,7 +13,7 @@ function Header() {
     return (
         <header>
             {TokenService.hasAuthToken()
-                ? <h1>{userContext.username}</h1>
+                ? <h1>{userContext.user.username}</h1>
                 : <h1>init</h1>}
             <div className='header-icons'>
                 <Link to='/newProject' className='add-logo-focus'>

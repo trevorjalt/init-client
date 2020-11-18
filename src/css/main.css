@@ -1,10 +1,29 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
 main {
     width: 100%;
     background-color: var(--colors-white);
     color: var(--colors-black);
+    font-family: var(--font);
+    
 
 }
 
+section{
+    width: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+button{
+    font-size: var(--font-size-sm);
+    font-family: var(--font);
+}
 h1{
     color: var(--colors-accent);
 }

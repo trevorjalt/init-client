@@ -20,42 +20,42 @@ class App extends Component {
     renderRoutes() {
         return (
             <Switch>
-                <PublicOnlyRoute 
-                    exact 
-                    path={'/'} 
-                    component={Yo} 
+                <PublicOnlyRoute
+                    exact
+                    path={'/'}
+                    component={Yo}
                 />
-                <PublicOnlyRoute 
-                    path={'/login'} 
-                    component={LoginRoute} 
+                <PublicOnlyRoute
+                    path={'/login'}
+                    component={LoginRoute}
                 />
-                <PublicOnlyRoute 
-                    path={'/register'} 
-                    component={RegistrationRoute} 
+                <PublicOnlyRoute
+                    path={'/register'}
+                    component={RegistrationRoute}
                 />
-                <PrivateRoute 
-                    path={'/account'} 
-                    component={Account} 
+                <PrivateRoute
+                    path={'/account'}
+                    component={Account}
                 />
-                <PrivateRoute 
-                    path={'/buzz'} 
-                    component={Buzz} 
+                <PrivateRoute
+                    path={'/buzz'}
+                    component={Buzz}
                 />
-                <PrivateRoute 
-                    path={'/connections'} 
-                    component={Connections} 
+                <PrivateRoute
+                    path={'/connections'}
+                    component={Connections}
                 />
-                <PrivateRoute 
-                    exact path={'/feed'} 
-                    component={Feed} 
+                <PrivateRoute
+                    exact path={'/feed'}
+                    component={Feed}
                 />
-                <PrivateRoute 
-                    path={'/newProject'} 
-                    component={NewProject} 
+                <PrivateRoute
+                    path={'/newProject'}
+                    component={NewProject}
                 />
-                <PrivateRoute 
-                    path={'/portfolio'} 
-                    component={Portfolio} 
+                <PrivateRoute
+                    path={'/portfolio'}
+                    component={Portfolio}
                 />
             </Switch>
         );
@@ -65,7 +65,7 @@ class App extends Component {
         return (
             <div className="App">
                 <Header />
-                <main 
+                <main
                     className='App-Main'
                 >
                     {this.renderRoutes()}

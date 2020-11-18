@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import AuthApiService from '../../services/auth-api-service'
 import UserContext from '../../contexts/userContext'
-import '../../css/Form.css'
+
 
 class LoginForm extends Component {
     static defaultProps = {
@@ -16,7 +16,7 @@ class LoginForm extends Component {
 
     handleSubmit = ev => {
         ev.preventDefault()
-        
+
         const { username, user_password } = ev.target
 
         this.setState({ error: null })
@@ -47,8 +47,8 @@ class LoginForm extends Component {
                 className='LoginForm'
                 onSubmit={this.handleSubmit}
             >
-                <div 
-                    role='alert' 
+                <div
+                    role='alert'
                     className='error-message'
                     aria-live='assertive'
                 >
@@ -81,7 +81,7 @@ class LoginForm extends Component {
                     />
                 </div>
                 <div>
-                    <button 
+                    <button
                         type='submit'
                         className='form-button'
                     >

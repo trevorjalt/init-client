@@ -1,0 +1,51 @@
+
+.profile-pic{
+    width: 100px;
+    display: inline;
+}
+
+.follow-item-wrapper{
+    width: 100%;
+    height: 120px;
+    
+}
+
+.follow-list{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: inherit;
+    align-items: center;
+    padding: var(--spacer-sm);
+    max-width: 750px;
+}
+
+.follow-wrapper-left{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.follow-item-inner-wrapper{
+    width: inherit;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+}
+
+.follow-name-wrapper{
+    justify-self: flex-start;
+    padding-left: var(--spacer-sm);
+}
+
+.toggle-button-wrapper{
+    width: inherit;
+    display: flex;
+    justify-content: stretch;
+}
+
+.toggle-button-wrapper button{
+    width: 100%;
+    flex: 1;
+}
