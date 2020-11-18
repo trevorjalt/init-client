@@ -1,16 +1,39 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import RegistrationForm from '../../components/RegistrationForm/RegistrationForm'
+// import './RegistrationRoute.css'
 
-class Registration extends Component {
-  render() {
-    return (
-      <div>
-        <h1>Le Registrar</h1>
-        <p>LOGO</p>
-        <p>signUp</p>
-        <p>logIn</p>
-      </div>
-    );
-  };
-};
+class RegistrationRoute extends Component {
+    static defaultProps = {
+        history: {
+            push: () => {},
+        },
+    }
 
-export default Registration;
+    handleRegistrationSuccess = () => {
+        const { history } = this.props
+        history.push('/login')
+    }
+
+    render() {
+        return (
+            <section 
+                className='registration-route'
+                aria-live='polite'
+                aria-relevant='all'
+            >
+                {/* <span className='welcome'><span className='logo-text'>Welcome to</span> fluent</span>
+                <div className='fluent-info'>
+                    <p>
+                        Practice learning a language with the spaced reptition revision technique.
+                    </p>
+                </div> */}
+                <h2 className='sign-up'>Sign up</h2>
+                <RegistrationForm
+                    onRegistrationSuccess={this.handleRegistrationSuccess}
+                />
+            </section>
+        )
+    }
+}
+
+export default RegistrationRoute

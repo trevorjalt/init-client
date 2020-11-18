@@ -16,13 +16,13 @@ const AuthApiService = {
                     : res.json()
             )
     },
-    postLogin({ username, password }) {
+    postLogin({ username, user_password }) {
         return fetch(`${config.API_ENDPOINT}/auth/login`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
             },
-            body: JSON.stringify({ username, password }),
+            body: JSON.stringify({ username, user_password }),
         })
             .then(res =>
                 (!res.ok)
