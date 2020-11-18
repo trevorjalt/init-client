@@ -1,0 +1,19 @@
+.account-form fieldset {
+    width: 90%;
+}
+
+.account-form fieldset legend {
+    text-align: right;
+    width: 80%;
+}
+
+.account-wrapper {
+    max-width: 80%;
+    margin-left: 10%;
+}
+
+.account-form fieldset legend span {
+    text-align: left;
+    width: 80%;
+}
+
