@@ -70,6 +70,7 @@ class App extends Component {
                 >
                     {this.renderRoutes()}
                 </main>
+                <Footer />
             </div>
         );
     };
