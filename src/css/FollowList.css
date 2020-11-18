@@ -5,7 +5,7 @@
 }
 
 .follow-item-wrapper{
-    width: 100%;
+    width: inherit;
     height: 120px;
     
 }
@@ -22,7 +22,7 @@
 
 .follow-wrapper-left{
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
 }
 
