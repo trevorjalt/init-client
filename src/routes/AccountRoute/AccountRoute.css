@@ -1,3 +1,10 @@
+.account-wrapper {
+    max-width: 80%;
+    margin-left: 10%;
+    background-color: none;
+    line-height: 200%;
+}
+
 .account-form fieldset {
     width: 90%;
     background-color: rgba(238, 198, 249, 0.5);
@@ -8,14 +15,7 @@
     width: 80%;
 }
 
-.account-wrapper {
-    max-width: 80%;
-    margin-left: 10%;
-    background-color: none;
-}
-
 .account-form fieldset legend span {
     text-align: left;
     width: 80%;
 }
-
