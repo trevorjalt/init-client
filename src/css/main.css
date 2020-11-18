@@ -9,8 +9,6 @@ main {
     background-color: var(--colors-white);
     color: var(--colors-black);
     font-family: var(--font);
-    
-
 }
 
 section{
@@ -25,6 +23,7 @@ button{
     font-family: var(--font);
 }
 h1{
+    font-size: 1.7rem;
     color: var(--colors-accent);
 }
 

@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ProfilePicture from "./ProfilePicture";
+import ProfilePic from "./ProfilePic";
 
 it('renders without crashing', () => {
     const div = document.createElement('div');
 
-    ReactDOM.render(<ProfilePicture />, div);
+    ReactDOM.render(<ProfilePic />, div);
 
     ReactDOM.unmountComponentAtNode(div);
 })

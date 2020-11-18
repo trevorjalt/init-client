@@ -1,6 +1,6 @@
 
 .profile-pic{
-    width: 100px;
+    width: 75px;
     display: inline;
 }
 
@@ -35,6 +35,7 @@
 }
 
 .follow-name-wrapper{
+    width: 50%;
     justify-self: flex-start;
     padding-left: var(--spacer-sm);
 }
@@ -48,4 +49,12 @@
 .toggle-button-wrapper button{
     width: 100%;
     flex: 1;
+}
+
+
+@media all and (min-width: 450px){
+    .profile-pic{
+        width: 100px;
+    }
+
 }
