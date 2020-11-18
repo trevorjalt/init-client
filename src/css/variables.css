@@ -9,7 +9,7 @@
     --spacer-med: 1rem;
     --spacer-lg: 1.2rem;
 
-    --font-size-sm: 14px;
+    --font-size-sm: 18px;
 
     --font: "Verdana", sans-serif;
 }
@@ -19,8 +19,6 @@
     --spacer-sm: 0.9rem;
     --spacer-med: 1.1rem;
     --spacer-lg: 1.3rem;
-
-    --font-size-sm: 16px;
    } 
 
 }
@@ -31,7 +29,6 @@
      --spacer-med: 1.3rem;
      --spacer-lg: 1.5rem;
  
-     --font-size-sm: 18px;
     }
 
     .gallery-img {
