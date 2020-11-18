@@ -1,36 +1,67 @@
 import React, { Component } from 'react'
+import PhotoUpload from '../PhotoUpload/PhotoUpload'
 import { Link } from 'react-router-dom'
-import { Input, Required, Label } from '../Form/Form'
 import AuthApiService from '../../services/auth-api-service'
-import Button from '../Button/Button'
-import './RegistrationForm.css'
+import UserContext from '../../contexts/userContext'
+import '../../css/Form.css'
 
 class RegistrationForm extends Component {
     static defaultProps = {
         onRegistrationSuccess: () => { }
     }
 
-    state = { error: null }
+    static contextType = UserContext
+
+    state = { 
+        error: null,
+    }
 
     firstInput = React.createRef()
 
     handleSubmit = ev => {
         ev.preventDefault()
-        const { name, username, password } = ev.target
-        AuthApiService.postUser({
-            name: name.value,
-            username: username.value,
-            password: password.value,
-        })
-            .then(user => {
-                name.value = ''
-                username.value = ''
-                password.value = ''
-                this.props.onRegistrationSuccess()
+
+        const { file } = this.context
+        const { 
+            fullname, 
+            username, 
+            user_password,
+            user_password_match,
+            email,
+            profile_photo,
+            about_user,
+            user_stack
+        } = ev.target
+
+        if (user_password.value !== user_password_match.value) {
+            this.setState( {error: 'Passwords must match' })
+            return
+        } else {
+            this.setState({ error: null })
+            AuthApiService.postUser({
+                fullname: fullname.value,
+                username: username.value,
+                user_password: user_password.value,
+                email: email.value,
+                // need to figure out how to send this object to the server
+                profile_photo: file,
+                about_user: about_user.value,
+                user_stack: user_stack.value
             })
-            .catch(res => {
-                this.setState({ error: res.error })
-            })
+                .then(user => {
+                    fullname.value = ''
+                    username.value = ''
+                    user_password.value = ''
+                    user_password_match.value = ''
+                    email.value=''
+                    about_user.value=''
+                    // profile_photo.value=''
+                    this.props.onRegistrationSuccess()
+                })
+                .catch(res => {
+                    this.setState({ error: res.error })
+                })
+        }
     }
 
     componentDidMount() {
@@ -51,24 +82,24 @@ class RegistrationForm extends Component {
                 >
                     {error && <p>{error}</p>}
                 </div>
-                <div className='registration-input'>
-                    <Label htmlFor='registration-name-input'>
-                        Enter your name<Required />
-                    </Label>
-                    <Input
+                <div className='form-wrapper'>
+                    <label htmlFor='registration-fullname-input'>
+                        fullName
+                    </label>
+                    <input
                         ref={this.firstInput}
-                        id='registration-name-input'
-                        name='name'
+                        id='registration-fullname-input'
+                        name='fullname'
                         required
                         aria-required='true'
                         autoComplete='name'
                     />
                 </div>
-                <div className='registration-input'>
-                    <Label htmlFor='registration-username-input'>
-                        Choose a username<Required />
-                    </Label>
-                    <Input
+                <div className='form-wrapper'>
+                    <label htmlFor='registration-username-input'>
+                        userName
+                    </label>
+                    <input
                         id='registration-username-input'
                         name='username'
                         required
@@ -76,23 +107,84 @@ class RegistrationForm extends Component {
                         autoComplete='off'
                     />
                 </div>
-                <div className='registration-input'>
-                    <Label htmlFor='registration-password-input'>
-                        Choose a password<Required />
-                    </Label>
-                    <Input
+                <div className='form-wrapper'>
+                    <label htmlFor='registration-password-input'>
+                        passWord
+                    </label>
+                    <input
                         id='registration-password-input'
-                        name='password'
+                        name='user_password'
                         type='password'
                         required
                         aria-required='true'
                         autoComplete='new-password'
                   />
                 </div>
-                <div className='registration-input'>
-                    <Button type='submit'>
+                <div className='form-wrapper'>
+                    <label htmlFor='registration-password-match-input'>
+                        confirm passWord
+                    </label>
+                    <input
+                        id='registration-password-match-input'
+                        name='user_password_match'
+                        type='password'
+                        required
+                        aria-required='true'
+                        autoComplete='off'
+                    >
+                    </input>
+                </div>
+                <div className='form-wrapper'>
+                    <label htmlFor='registration-email-input'>
+                        eMail
+                    </label>
+                    <input
+                        id='registration-email-input'
+                        name='email'
+                        type='email'
+                        required
+                        aria-required='true'
+                        autoComplete='email'
+                    >
+                    </input>
+                </div>
+                <div className='form-wrapper'>
+                    <label htmlFor='registration-about-user-input'>
+                        about
+                    </label>
+                    <input
+                        id='registration-about-user-input'
+                        name='about_user'
+                        required
+                        aria-required='true'
+                        autoComplete='off'
+                    >
+                    </input>
+                </div>
+                <div className='form-wrapper'>
+                    <label htmlFor='registration-user-stack-input'>
+                        stack
+                    </label>
+                    <select 
+                        id='registration-user-stack-input'
+                        name='user_stack'
+                        defaultValue='Full Stack' 
+                        required
+                        aria-required='true'
+                    >
+                        <option value='Full Stack'>Full Stack</option>                           
+                        <option value='Frontend'>Frontend</option>
+                        <option value='Backend'>Backend</option>
+                    </select>
+                </div>
+                <PhotoUpload />
+                <div>
+                    <button 
+                        type='submit'
+                        className='form-button'
+                    >
                         Sign up
-                    </Button>
+                    </button>
                     <Link 
                         to='/login'
                         className='account-link'

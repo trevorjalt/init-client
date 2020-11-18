@@ -4,10 +4,12 @@ import TokenService from '../services/token-service'
 import IdleService from '../services/idle-service'
 
 const UserContext = React.createContext({
+    file: {},
     user: {},
     error: null,
     setError: () => {},
     clearError: () => {},
+    setFile: () => {},
     setUser: () => {},
     processLogin: () => {},
     processLogout: () => {},
@@ -18,7 +20,12 @@ export default UserContext
 export class UserProvider extends Component {
     constructor(props) {
         super(props)
-        const state = { user: {}, error: null }
+        
+        const state = { 
+            file: {},
+            user: {}, 
+            error: null 
+        }
 
         const jwtPayload = TokenService.parseAuthToken()
 
@@ -54,6 +61,10 @@ export class UserProvider extends Component {
 
     clearError = () => {
         this.setState({ error: null })
+    }
+
+    setFile = file => {
+        this.setState({ file })
     }
 
     setUser = user => {
@@ -103,10 +114,12 @@ export class UserProvider extends Component {
 
     render() {
         const value = {
+            file: this.state.file,
             user: this.state.user,
             error: this.state.error,
             setError: this.setError,
             clearError: this.clearError,
+            setFile: this.setFile,
             setUser: this.setUser,
             processLogin: this.processLogin,
             processLogout: this.processLogout,
