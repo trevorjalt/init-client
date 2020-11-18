@@ -9,10 +9,17 @@ main {
     background-color: var(--colors-white);
     color: var(--colors-black);
     font-family: var(--font);
+    
 
 }
 
-
+section{
+    width: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
 
 h1{
     color: var(--colors-accent);
@@ -20,31 +27,6 @@ h1{
 
 a{
     text-decoration: none;
-}
-
-.profile-pic{
-    width: 100px;
-}
-
-.follow-item-wrapper{
-    width: 100px;
-    height: 170px;
-    
-}
-
-.follow-item-wrapper h4{
-    margin: 0;
-    font-size: var(--font-size-sm);
-    text-align: center;
-}
-
-.follow-list{
-    display: flex;
-    flex-wrap: wrap;
-    width: inherit;
-    box-sizing: border-box;
-    justify-content: space-between;
-    align-items: center;
 }
 
 
