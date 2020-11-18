@@ -19,8 +19,8 @@ function ProfileTop() {
         </div>
         <div className='profile-wrapper'>
           <p className='p-item-top'>{user.username}</p>
-          <p className='p-item-mid'>stack: front/back/full</p>
-          <p className='p-item-bot'>portfolio: description</p>
+          <p className='p-item-mid'>stack: {user.user_stack}</p>
+          <p className='p-item-bot'>about: {user.about_user}</p>
         </div>
       </section>
     );
