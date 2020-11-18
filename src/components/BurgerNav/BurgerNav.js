@@ -1,9 +1,10 @@
 import React, { Fragment, useState } from 'react'
 import { Link } from 'react-router-dom';
+import TokenService from '../../services/token-service'
 
 function BurgerNav() {
 
-    const [showNav, setShowNav] = useState(false)
+    const [showNav, setShowNav] = useState(true)
 
     return (
         <div className='burger-and-nav' >
@@ -42,18 +43,40 @@ function BurgerNav() {
                             aria-live='assertive'
                             aria-relevant='all'>
 
-                            <span className='navigation-item nav-item-one'>
-                                <Link to='/login' className='navigation-link'>
-                                    Login
+                            {TokenService.hasAuthToken()
+                                ? <Fragment>
+                                    < span className='navigation-item nav-item-one' onClick={() => setShowNav(true)}>
+                                        <Link to='/portfolio' className='navigation-link'>
+                                            Portfolio
+                            </Link>
+                                    </span>
+                                    <span className='navigation-item nav-item-two' onClick={() => setShowNav(true)}>
+                                        <Link to='/connections' className='navigation-link'>
+                                            Connections
+                            </Link>
+                                    </span>
+                                    <span
+                                        className='navigation-item  nav-item-three'
+                                        onClick={() => {
+                                            TokenService.clearAuthToken()
+                                            setShowNav(true)
+                                        }}>
+                                        Log out
+                                    </span>
+                                </Fragment>
+                                : <Fragment>
+                                    < span className='navigation-item nav-item-one' onClick={() => setShowNav(true)}>
+                                        <Link to='/login' className='navigation-link'>
+                                            Login
                                     </Link>
-                            </span>
-
-
-                            <span className='navigation-item nav-item-two'>
-                                <Link to='/register' className='navigation-link'>
-                                    Sign up
+                                    </span>
+                                    <span className='navigation-item nav-item-two' onClick={() => setShowNav(true)}>
+                                        <Link to='/register' className='navigation-link'>
+                                            Sign up
                                     </Link>
-                            </span>
+                                    </span>
+                                </Fragment>
+                            }
 
                         </nav>
                     </Fragment>
