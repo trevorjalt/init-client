@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-<<<<<<< HEAD
-=======
 
->>>>>>> header-in-progress
 
 class Feed extends Component {
   render() {

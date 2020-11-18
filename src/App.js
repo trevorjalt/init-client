@@ -15,24 +15,6 @@ import Registration from './routes/RegistrationRoute/RegistrationRoute';
 import Footer from './components/Footer/Footer';
 
 class App extends Component {
-<<<<<<< HEAD
-    renderRoutes() {
-        return (
-            <>
-                <Route exact path={'/'} component={Yo} />
-                <Route exact path={'/feed'} component={Feed} />
-                <Route path={'/portfolio'} component={Portfolio} />
-                <Route path={'/connections'} component={Connections} />
-                <Route path={'/buzz'} component={Buzz} />
-                <Route path={'/account'} component={Account} />
-                <Route path={'/newProject'} component={NewProject} />
-                <Route path={'/login'} component={Login} />
-                <Route path={'/registration'} component={Registration} />
-                <Footer />
-            </>
-        );
-    };
-=======
   renderRoutes() {
     return (
       <>
@@ -48,7 +30,6 @@ class App extends Component {
       </>
     );
   };
->>>>>>> header-in-progress
 
   render() {
     return (

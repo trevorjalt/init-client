@@ -1,21 +1,6 @@
 import React, { Fragment, useState } from 'react'
 import { Link } from 'react-router-dom';
 
-function OpenNav() {
-    return (
-        <div>
-            <div className='burger-icon'>
-                <div className='burger-nav-top burger-nav-top-open burger-nav'></div>
-                <div className='burger-nav-bottom burger-nav-bottom-open burger-nav'></div>
-            </div>
-
-
-        </div>
-    )
-}
-
-
-
 function BurgerNav() {
 
     const [showNav, setShowNav] = useState(false)
@@ -44,15 +29,10 @@ function BurgerNav() {
                             <span className='navigation-item nav-item-two'>
                                 <Link to='/register' className='navigation-link'>Sign up</Link>
                             </span>
-                        </nav></Fragment>
+                        </nav>
+                    </Fragment>
             }
 
-
-
-            {/* {showNav
-                ? <OpenNav />
-                : <CloseNav />
-            } */}
         </div>
     )
 }
