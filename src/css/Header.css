@@ -1,21 +1,3 @@
-@keyframes slideInFromLeft {
-    0% {
-      transform: translateX(-100%);
-    }
-    100% {
-      transform: translateX(0);
-    }
-}
-
-
-header {
-    animation: .75s ease-in 0s 1 slideInFromLeft;
-}
-
-.header-icons{
-    display: flex;
-    width: 180px;
-}
 
 header{
     width: inherit;
@@ -28,66 +10,87 @@ header{
 span{
     display: block;
 }
+
 .add-logo{
     width: 100px;
 }
-
-.nav-item{
-    animation: .25s ease-in 0s 1 slideInFromRight;
+.header-icons{
     display: flex;
-    flex-direction: column;
-
-    /* margin: 1vh 0 1vh 0;
-    padding: .5vh 0 .5vh 0; */
+    width: 180px;
 }
 
-.nav-link{
-    text-decoration: none;
-    font-size: 2.5vh;
-    text-align: right;
-    color: #020505;
+.burger-wrapper{
+    width: 43px;
+    height: 33px;
+    position: relative;
+    top: 35px;
+    left: 25px;
+    transform: rotate(0deg);
+    transition: .5s ease-in-out;
+    cursor: pointer;
+    margin-right: 1vw;
 }
 
-.burger-nav {
+.burger-line{
     display: block;
     position: absolute;
-    height: 5px;
-    width: 50px;
+    height: 4px;
+    width: 100%;
     background: var(--colors-accent);
     border-radius: 5px;
     opacity: 1;
+    left: 0;
     transform: rotate(0deg);
     transition: .25s ease-in-out;
-} 
-
-.burger-nav-top {
-    top: 40px;
-    right: 15px;
-    transform-origin: left center;
-    transition: .25s ease-in-out;
 }
 
-.burger-nav-top-open {
+.burger-line-one{
+    top: 0px;
+    transform-origin: left center;
+}
+
+.burger-line-two{
+    top: 12px;
+    transform-origin: left center;
+}
+
+.burger-line-three{
+    top: 24px;
+    transform-origin: left center;
+}
+
+.burger-line-open-one{
     transform: rotate(45deg);
+    top: -3px;
+    left: 5px;
 }
 
-.burger-nav-middle {
-    top: 55px;
-    right: 15px;
-    transform-origin: left center;
-    transition: .25s ease-in-out;
+.burger-line-open-two{
+display: none;
 }
 
-.burger-nav-bottom {
-    top: 70px;
-    right: 15px;
-    transform-origin: left center;
-    transition: .25s ease-in-out;
-}
-
-.burger-nav-bottom-open {
+.burger-line-open-three{
     transform: rotate(-45deg);
-    transition: .25s ease-in-out;
-    right: 15px;
-   top: 74px;
+    top: 27px;
+    left: 5px;
+
+}
+
+.navigation{
+    position: relative;
+
+}
+
+.navigation-item{
+    position: absolute;
+    right: 20px;
+    text-align: left;
+}
+
+.nav-item-one{
+    top: 80px;
+}
+
+.nav-item-two{
+    top: 100px;
 }

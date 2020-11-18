@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import '../../css/variables.css';
-import '../../css/main.css';
 import Benchmark from '../../pictures/benchmark-app-full-page-view.png';
 import Fluent from '../../pictures/fluent-app-full-page-view.png';
 

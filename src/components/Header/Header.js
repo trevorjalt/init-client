@@ -1,5 +1,5 @@
 import React, { useState, useContext, Fragment } from 'react'
-import ProfilePicture from '../ProfilePicture/ProfilePicture/ProfilePicture'
+import { Link } from 'react-router-dom';
 import BurgerNav from '../BurgerNav/BurgerNav.js'
 import UserContext from '../../contexts/userContext';
 import addLogo from '../Footer/Images/add-logo.png'
@@ -12,7 +12,7 @@ function Header() {
         <header>
             <h1>init</h1>
             <div className='header-icons'>
-                <img className='add-logo' src={addLogo} />
+                <Link to='/newProject'><img className='add-logo' src={addLogo} /></Link>
                 <BurgerNav />
             </div>
         </header>
