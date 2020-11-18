@@ -22,13 +22,17 @@ function BurgerNav() {
                             <span className='burger-line burger-line-three burger-line-open-three'></span>
                         </div>
 
-                        <nav role='navigation'>
-                            <span className='navigation-item nav-item-one'>
-                                <Link to='/login' className='navigation-link'>Login</Link>
+                        <nav role='navigation' className='navigation'>
+                            <Link to='/login' className='navigation-link'>
+                                <span className='navigation-item nav-item-one'>
+                                    Login
                             </span>
-                            <span className='navigation-item nav-item-two'>
-                                <Link to='/register' className='navigation-link'>Sign up</Link>
+                            </Link>
+                            <Link to='/register' className='navigation-link'>
+                                <span className='navigation-item nav-item-two'>
+                                    Sign up
                             </span>
+                            </Link>
                         </nav>
                     </Fragment>
             }
