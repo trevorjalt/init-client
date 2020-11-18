@@ -20,7 +20,9 @@ section{
     justify-content: flex-start;
     align-items: center;
 }
-
+button{
+    font-size: var(--font-size-sm);
+}
 h1{
     color: var(--colors-accent);
 }

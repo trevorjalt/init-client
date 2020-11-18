@@ -38,3 +38,14 @@
     justify-self: flex-start;
     padding-left: var(--spacer-sm);
 }
+
+.toggle-button-wrapper{
+    width: inherit;
+    display: flex;
+    justify-content: stretch;
+}
+
+.toggle-button-wrapper button{
+    width: 100%;
+    flex: 1;
+}
