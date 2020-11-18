@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import './css/variables.css';
 import './css/main.css';
-import Header from './components/header';
+import Header from './components/Header/Header';
 import Yo from './routes/yo';
 import Buzz from './routes/BuzzRoute/BuzzRoute';
 import Connections from './routes/ConnectionsRoute/ConnectionsRoute'
@@ -15,6 +15,7 @@ import Registration from './routes/RegistrationRoute/RegistrationRoute';
 import Footer from './components/Footer/Footer';
 
 class App extends Component {
+<<<<<<< HEAD
     renderRoutes() {
         return (
             <>
@@ -31,17 +32,32 @@ class App extends Component {
             </>
         );
     };
+=======
+  renderRoutes() {
+    return (
+      <>
+        <Route exact path={'/'} component={Yo} />
+        <Route exact path={'/feed'} component={Feed} />
+        <Route path={'/portfolio'} component={Portfolio} />
+        <Route path={'/connections'} component={Connections} />
+        <Route path={'/buzz'} component={Buzz} />
+        <Route path={'/account'} component={Account} />
+        <Route path={'/newProject'} component={NewProject} />
+        <Route path={'/login'} component={Login} />
+        <Route path={'/registration'} component={Registration} />
+      </>
+    );
+  };
+>>>>>>> header-in-progress
 
-    render() {
-        return (
-            <div className="App">
-                <header>
-                    <Header />
-                </header>
-                <main className='App-Main'>{this.renderRoutes()}</main>
-            </div>
-        );
-    };
+  render() {
+    return (
+      <div className="App">
+        <Header />
+        <main className='App-Main'>{this.renderRoutes()}</main>
+      </div>
+    );
+  };
 };
 
 export default App;
