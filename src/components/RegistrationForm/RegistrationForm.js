@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import PhotoUpload from '../PhotoUpload/PhotoUpload'
 import { Link } from 'react-router-dom'
 import AuthApiService from '../../services/auth-api-service'
 import UserContext from '../../contexts/userContext'
@@ -21,15 +20,12 @@ class RegistrationForm extends Component {
     handleSubmit = ev => {
         ev.preventDefault()
 
-        const { data } = this.context
-
         const { 
             fullname, 
             username, 
             user_password,
             user_password_match,
             email,
-            profile_photo,
             about_user,
             user_stack
         } = ev.target
@@ -44,7 +40,6 @@ class RegistrationForm extends Component {
                 username: username.value,
                 user_password: user_password.value,
                 email: email.value,
-                profile_photo: data,
                 about_user: about_user.value,
                 user_stack: user_stack.value
             })
@@ -56,7 +51,6 @@ class RegistrationForm extends Component {
                     user_password_match.value = ''
                     email.value=''
                     about_user.value=''
-                    // profile_photo.value=''
                     this.props.onRegistrationSuccess()
                 })
                 .catch(res => {
@@ -74,7 +68,6 @@ class RegistrationForm extends Component {
         return (
             <form
                 className='registration-form'
-                encType='multipart/form-data'
                 onSubmit={this.handleSubmit}
             >
                 <div 
@@ -91,6 +84,7 @@ class RegistrationForm extends Component {
                     <input
                         ref={this.firstInput}
                         id='registration-fullname-input'
+                        type='text'
                         name='fullname'
                         required
                         aria-required='true'
@@ -179,7 +173,6 @@ class RegistrationForm extends Component {
                         <option value='Backend'>Backend</option>
                     </select>
                 </div>
-                <PhotoUpload />
                 <div>
                     <button 
                         type='submit'
