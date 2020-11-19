@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import UserContext from '../../contexts/userContext';
 import ProfilePic from '../ProfilePic/ProfilePic';
+import Vegeta from '../../pictures/VegetaProfile.jpg';
 
 function ProfileTop() {
   const userContext = useContext(UserContext)
@@ -11,7 +12,7 @@ function ProfileTop() {
   return (
     <section>
       <div className='hex-wrapper'>
-        <ProfilePic />
+        <ProfilePic image={Vegeta}/>
         <div className='p-wrapper'>
           <p className='p-filling'>post counter</p>
           <p className='p-filling'>follower counter</p>
