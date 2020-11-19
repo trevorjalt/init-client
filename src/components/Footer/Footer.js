@@ -4,7 +4,7 @@ import './Footer.css';
 import HiveFeed from './Images/feed-logo.png';
 import Swarm from './Images/connect-logo.png';
 import Buzz from './Images/notification-logo.png';
-import Account from './Images/profile-logo.png';
+import Account from './Images/default-profile-logo.png';
 //import TokenService from  '../(../services/token-service';
 
 export default function Footer() {
