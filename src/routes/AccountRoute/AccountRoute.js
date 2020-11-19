@@ -13,12 +13,17 @@ class Account extends Component {
 
     render() {
         const { user } = this.context
+        // const userAccountPhoto = user.accountPhoto
             console.log(user)
         return (
             <div className='account-wrapper'>
                 <h2>Account</h2>
                 <p>info</p>
                     <form className='account-form'>
+                        <fieldset>
+                            <legend><h3>userPhoto</h3></legend>
+                            <span><img src=''></img></span>
+                        </fieldset>
                         <fieldset>
                             <legend><h3>fullName</h3></legend>
                             <span>{ user.fullname }</span>

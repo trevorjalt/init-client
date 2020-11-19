@@ -1,15 +1,15 @@
 body {
-    margin-bottom: 13vh;
+    margin-bottom: 12vh;
 }
 
 ul.Footer {
-    height: 10vh;
+    height: 12vh;
     align-items: center;
     text-align: center;
     justify-content: space-between;;
     background-color: var(--colors-accent-light);
-    padding: 1vw 2vw 1vw 2vw;
-    margin-bottom: 4vh;
+    /* padding: 1vw 2vw 1vw 2vw; */
+    /* margin-bottom: 4vh; */
     text-decoration: none;
     list-style-type: none;
 }
@@ -21,12 +21,18 @@ ul.Footer li {
 }
 
 div.FooterWrapper {
+    border-style: solid;
+    border-color: #FFFFFF;
+    border-top: 1;
+    border-bottom: 0;
+    border-left: 0;
+    border-right: 0;
     display: block;
-    padding-top: 2vh;
+    /* padding-top: 2vh; */
     position: fixed;
     left: 0;
     bottom: 0;
-    height: 13vh;
+    height: 12vh;
     width: 100%;
 }
 
