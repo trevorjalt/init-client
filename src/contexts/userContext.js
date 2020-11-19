@@ -4,12 +4,10 @@ import TokenService from '../services/token-service'
 import IdleService from '../services/idle-service'
 
 const UserContext = React.createContext({
-    data: {},
     user: {},
     error: null,
     setError: () => {},
     clearError: () => {},
-    setData: () => {},
     setUser: () => {},
     processLogin: () => {},
     processLogout: () => {},
@@ -22,7 +20,6 @@ export class UserProvider extends Component {
         super(props)
         
         const state = { 
-            data: {},
             user: {}, 
             error: null 
         }
@@ -35,7 +32,6 @@ export class UserProvider extends Component {
                 fullname: jwtPayload.fullname,
                 username: jwtPayload.sub,
                 email: jwtPayload.email,
-                // profile_photo: jwtPayload.profile_photo,
                 about_user: jwtPayload.about_user,
                 user_stack: jwtPayload.user_stack,
           }
@@ -67,11 +63,6 @@ export class UserProvider extends Component {
         this.setState({ error: null })
     }
 
-    setData = data => {
-        console.log('setting data', data)
-        this.setState({ data })
-    }
-
     setUser = user => {
         this.setState({ user })
     }
@@ -84,7 +75,6 @@ export class UserProvider extends Component {
             fullname: jwtPayload.fullname,
             username: jwtPayload.sub,
             email: jwtPayload.email,
-            // profile_photo: jwtPayload.profile_photo,
             about_user: jwtPayload.about_user,
             user_stack: jwtPayload.user_stack,
         })
@@ -123,12 +113,10 @@ export class UserProvider extends Component {
 
     render() {
         const value = {
-            data: this.state.data,
             user: this.state.user,
             error: this.state.error,
             setError: this.setError,
             clearError: this.clearError,
-            setData: this.setData,
             setUser: this.setUser,
             processLogin: this.processLogin,
             processLogout: this.processLogout,

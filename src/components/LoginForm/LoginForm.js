@@ -62,6 +62,7 @@ class LoginForm extends Component {
                         ref={this.firstInput}
                         id='login-username-input'
                         name='username'
+                        type='text'
                         required
                         aria-required='true'
                         autoComplete='username'
