@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-// import AuthApiService from '../../services/auth-api-service'
-import UserContext from '../../contexts/userContext'
+import initContentContext from '../../contexts/initContentContext'
 import '../../css/Form.css'
 
 class PhotoUpload extends Component {
@@ -8,7 +7,7 @@ class PhotoUpload extends Component {
         onLoginSuccess: () => { }
     }
 
-    static contextType = UserContext
+    static contextType = initContentContext
 
     state = { 
         error: null,
@@ -35,7 +34,7 @@ class PhotoUpload extends Component {
                     file: file.file,
                     error: null
                 }))
-                console.log('file', file.file.slice(0, 1))
+                console.log('file', file)
                 } else {
                 this.setState({ error: 'File Size Larger Than 1MB' })
                 }
@@ -75,10 +74,6 @@ class PhotoUpload extends Component {
         });
     }
 
-    // componentDidMount() {
-    //     this.inputRef.current.focus()
-    // }
-
     render() {
         const { error } = this.state
         return (
@@ -90,7 +85,6 @@ class PhotoUpload extends Component {
                 >
                     {error && <p>{error}</p>}
                 </div>
-                {/* <div> */}
                 <label htmlFor='account-photo-upload'>
                     photo
                 </label>
@@ -100,12 +94,11 @@ class PhotoUpload extends Component {
                     type='file'
                     id='account-photo-upload'
                     onChange={this.changeFile}
-                    name='profile_photo'
+                    name='imageRequest'
                     required
                     aria-required='true'
                     autoComplete='off'
                 />
-                {/* </div> */}
                 {this.state.data
                     ? this.renderPreview()
                     : ''

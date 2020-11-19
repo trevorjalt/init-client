@@ -11,6 +11,7 @@ import Connections from '../../routes/ConnectionsRoute/ConnectionsRoute'
 import Feed from '../../routes/FeedRoute/FeedRoute';
 import Portfolio from '../../routes/PortfolioRoute/PortfolioRoute';
 import Account from '../../routes/AccountRoute/AccountRoute';
+import AvatarUploadRoute from '../../routes/AvatarUploadRoute/AvatarUploadRoute';
 import NewProject from '../../routes/NewProjectRoute/NewProjectRoute';
 import LoginRoute from '../../routes/LoginRoute/LoginRoute';
 import RegistrationRoute from '../../routes/RegistrationRoute/RegistrationRoute';
@@ -36,6 +37,10 @@ class App extends Component {
                 <PrivateRoute
                     path={'/account'}
                     component={Account}
+                />
+                <PrivateRoute
+                    path={'/avatarupload'}
+                    component={AvatarUploadRoute}
                 />
                 <PrivateRoute
                     path={'/buzz'}
