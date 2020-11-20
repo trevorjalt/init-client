@@ -1,9 +1,10 @@
-import React, { Fragment, useState } from 'react'
+import React, { Fragment, useState, useContext } from 'react'
 import { Link } from 'react-router-dom';
 import TokenService from '../../services/token-service'
+import UserContext from '../../contexts/userContext'
 
 function BurgerNav() {
-
+    const userContext = useContext(UserContext)
     const [showNav, setShowNav] = useState(true)
 
     return (
@@ -56,12 +57,14 @@ function BurgerNav() {
                             </Link>
                                     </span>
                                     <span
-                                        className='navigation-item  nav-item-three'
+                                        className='navigation-item  nav-item-three nav-logout-button'
                                         onClick={() => {
-                                            TokenService.clearAuthToken()
+                                            userContext.processLogout()
                                             setShowNav(true)
                                         }}>
-                                        Log out
+                                       
+                                            Log out
+                                      
                                     </span>
                                 </Fragment>
                                 : <Fragment>

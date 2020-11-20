@@ -22,7 +22,7 @@ class Account extends Component {
                     <form className='account-form'>
                         <fieldset>
                             <legend><h3>userPhoto</h3></legend>
-                            <span><img src=''></img></span>
+                            <span></span>
                         </fieldset>
                         <fieldset>
                             <legend><h3>fullName</h3></legend>

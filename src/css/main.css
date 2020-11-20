@@ -28,6 +28,7 @@ h1{
 
 a{
     text-decoration: none;
+    color: var(--colors-accent);
 }
 
 .error-message {

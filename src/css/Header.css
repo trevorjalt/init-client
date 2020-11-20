@@ -27,14 +27,10 @@ header{
 
 }
 
-/* .add-logo-focus{
-    outline: 0;
+.nav-logout-button{
+    color: var(--colors-accent);
+    cursor: pointer;
 }
-
-.add-logo-focus:focus{
-    border: 2px solid var(--colors-accent-light);
-    border-radius: 2px;
-} */
 
 .header-icons{
     display: flex;
