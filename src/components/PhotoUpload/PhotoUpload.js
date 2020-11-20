@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import initContentContext from '../../contexts/initContentContext'
-import '../../css/Form.css'
+import AvatarDefault from '../Footer/Images/avatar-default.png'
+import UploadLogo from '../Footer/Images/upload-logo.png'
+// import ProfilePic from '../ProfilePic/ProfilePic'
+import '../../css/PhotoUpload.css'
 
 class PhotoUpload extends Component {
     static defaultProps = {
@@ -53,8 +56,8 @@ class PhotoUpload extends Component {
             <div>
                 <img 
                     src={this.state.data}  
-                    alt='profile-preview' 
-                    className='preview-photo' 
+                    alt='upload-preview' 
+                    className='upload-preview' 
                 />
             </div>
         )
@@ -77,7 +80,15 @@ class PhotoUpload extends Component {
     render() {
         const { error } = this.state
         return (
-            <div className='form-wrapper'>
+            <div className='avatar-uploader'>
+                {this.state.data
+                    ? this.renderPreview()
+                    : (<img 
+                        src={AvatarDefault}
+                        className='upload-default-avatar'
+                        alt='avatar-default-logo'
+                    />)
+                }
                 <div 
                     role='alert' 
                     className='error-message'
@@ -85,25 +96,28 @@ class PhotoUpload extends Component {
                 >
                     {error && <p>{error}</p>}
                 </div>
-                <label htmlFor='account-photo-upload'>
-                    photo
+                <label htmlFor='upload-selector'>
+                    <img 
+                        src ={UploadLogo} 
+                        alt='upload-button'
+                        className='upload-selector-button' 
+                    />
                 </label>
                 <input
                     ref={this.inputRef}
                     accept='image/*'
                     type='file'
-                    id='account-photo-upload'
+                    id='upload-selector'
                     onChange={this.changeFile}
                     name='imageRequest'
                     required
                     aria-required='true'
                     autoComplete='off'
+                    className='original-input'
                 />
-                {this.state.data
-                    ? this.renderPreview()
-                    : ''
-                }
-
+                <span className='image-info'>
+                    .jpg .gif .png .jpeg &nbsp; up to 1MB
+                </span>
             </div>
         )
     }

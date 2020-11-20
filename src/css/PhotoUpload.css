@@ -1,0 +1,28 @@
+.avatar-uploader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: lightgrey;
+    width: 100vw;
+}
+
+.image-info {
+    margin-bottom: 6vh;
+}
+
+.upload-selector-button {
+    width: 30vw;
+    cursor: pointer;
+}
+
+.upload-default-avatar {
+    width: 70vw;
+}
+
+.upload-preview {
+    width: 100vw;
+}
+
+.original-input {
+    display: none
+}
