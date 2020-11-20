@@ -79,14 +79,32 @@ export default function Gallery() {
   const [query, setQuery] = useState('');
   const [pageNumber, setPageNumber] = useState(1);
 
+  //Here we destructure our useBookSearch
+  const { books, hasMore, loading, error } = useBookSearch(query, pageNumber);
+
+  //Observer starts off Null
+  //It is a ref that tells us where we should be
+  //Our useCallback will disconnect it, then it must be set up to observe what ever the node is
   const observer = useRef()
   //Okay...
-  //The lastBook is a Reference Value which must be updated in conjunction with it's apperance on the page
+  //The lastBookElementRef is a Reference Value which must be updated in conjunction with it's apperance on the page
   //So our reference value is equal to a function that takes care of that
-  //And the reference value appears far below, with our Key
+  //*Our reference value appear far below, in the Return, right next to our Key
+  //If the page is loading we shouldn't be return anything, so that is accounted for
   const lastBookElementRef = useCallback(node => {
-    console.log('lastBook reference', node)
-  })
+    if (loading) return;
+    //This is how we clear the observer
+    if (observer.current) observer.current.disconnect();
+    //This is how we we set the observer to follow our node
+    //If you run this you will notice that the if statement is carried out once the pages intersects, or sees, the entry
+    observer.current = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting && hasMore) {
+        console.log('Visible');
+        setPageNumber(prevPageNumber => prevPageNumber + 1);
+      }
+    })
+    if (node) observer.current.observe(node);
+  }, [loading, hasMore]);
 
   //Added a search bar to choose our Queries (actual app this is stretch goal)
   //Every query we want to default to Page 1. Starting off on Page 7 or so would be jarring
@@ -94,9 +112,6 @@ export default function Gallery() {
     setQuery(e.target.value);
     setPageNumber(1);
   }
-
-  //Here we destructure our useBookSearch
-  const { books, hasMore, loading, error } = useBookSearch(query, pageNumber);
 
   //Deleted the render
   //replaced return with some book nerd stuff
