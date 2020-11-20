@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import UserContext from '../../contexts/userContext';
+import ProfilePic from '../../components/ProfilePic/ProfilePic';
 import './AccountRoute.css';
 
 class Account extends Component {
@@ -21,8 +22,15 @@ class Account extends Component {
                 <p>info</p>
                     <form className='account-form'>
                         <fieldset>
-                            <legend><h3>userPhoto</h3></legend>
-                            <span></span>
+                            <legend><h3>avatar</h3></legend>
+                            <section>
+                                <div className='hex-wrapper'>
+                                    <ProfilePic />
+                                    <div className='p-wrapper'>
+                                        <p className='p-item'>{user.username}</p>
+                                    </div>
+                                </div>
+                            </section>
                         </fieldset>
                         <fieldset>
                             <legend><h3>fullName</h3></legend>

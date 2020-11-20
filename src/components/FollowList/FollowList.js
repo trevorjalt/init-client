@@ -1,28 +1,72 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import ProfilePic from '../ProfilePic/ProfilePic'
 import { Link } from 'react-router-dom';
+import FollowService from '../../services/follow-service';
 import '../../css/FollowList.css'
 
 function FollowList(props) {
-    //TRUE IS FOLLOWERS 
-    //FALSE IS FOLLOWING
-    const [toggleFollow, setToggleFollow] = useState(true)
+    const [toggleFollow, setToggleFollow] = useState(false)
 
-    const usersArr = toggleFollow ? props.followers : props.following
+    const [followedByUser, setFollowedByUser] = useState([])
+    const [followingUser, setFollowingUser] = useState([])
+
+    useEffect(() => {
+        getFollow()
+
+    }, [])
+
+    const getFollow = async () => {
+        try {
+            const { followingUser, followedByUser } = await FollowService.getFollowLists()
+            setFollowedByUser(followedByUser)
+            setFollowingUser(followingUser)
+        }
+        catch {
+            return err => console.log(err)
+        }
+    }
+
+    const handleUnfollow = async (id) => {
+        try {
+            await FollowService.unfollow(id)
+            return await getFollow()
+        }
+        catch {
+            return err => console.log(err)
+        }
+    }
+
+    const handleFollow = async (id) => {
+        try {
+            await FollowService.follow(id)
+            return await getFollow()
+        }
+        catch {
+            return err => console.log(err)
+        }
+
+
+    }
+
+    const usersArr = toggleFollow ? followingUser : followedByUser
 
     const followList = usersArr.map((f, index) => {
         return (
             <div className='follow-item-wrapper' key={index} >
-                <Link to='/portfolio' className='follow-item-inner-wrapper'>
+                <div className='follow-item-inner-wrapper'>
                     <div className='follow-wrapper-left'>
-                        <ProfilePic />
+                        <Link to='/portfolio'>
+                            <ProfilePic />
+                        </Link>
                         <div className='follow-name-wrapper'>
                             <h4>{f.username}</h4>
                             <p>{f.name}</p>
                         </div>
                     </div>
-                    {toggleFollow ? <button className='follow-button'>Follow</button> : <button className='follow-button'>Unfollow</button>}
-                </Link>
+                    {toggleFollow
+                        ? <button className='follow-button' onClick={() => handleFollow(f.id)}>Follow</button>
+                        : <button className='follow-button' onClick={() => handleUnfollow(f.id)}>Unfollow</button>}
+                </div>
             </div>
         )
     })
@@ -38,108 +82,6 @@ function FollowList(props) {
             </div>
         </section>
     )
-}
-
-FollowList.defaultProps = {
-    followers: [
-        {
-            username: 'Really Son Goku',
-            name: 'Kakarot'
-        },
-        {
-            username: 'The Strongest Ever',
-            name: 'Vegeta'
-        },
-        {
-            username: 'ProfessorGo',
-            name: 'Gohan'
-        },
-        {
-            username:
-                'Time Traveller Trunks',
-            name: 'Trunks'
-        },
-        {
-            username: 'Really Son Goku',
-            name: 'Kakarot'
-        },
-        {
-            username: 'The Strongest Ever',
-            name: 'Vegeta'
-        },
-        {
-            username: 'ProfessorGo',
-            name: 'Gohan'
-        },
-        {
-            username:
-                'Time Traveller Trunks',
-            name: 'Trunks'
-        },
-        {
-            username: 'Really Son Goku',
-            name: 'Kakarot'
-        },
-        {
-            username: 'The Strongest Ever',
-            name: 'Vegeta'
-        },
-        {
-            username: 'ProfessorGo',
-            name: 'Gohan'
-        },
-        {
-            username:
-                'Time Traveller Trunks',
-            name: 'Trunks'
-        }
-    ],
-
-    following: [
-        {
-            username: 'ProfessorGo',
-            name: 'Gohan'
-        },
-        {
-            username:
-                'Time Traveller Trunks',
-            name: 'Trunks'
-        },
-        {
-            username: 'Really Son Goku',
-            name: 'Kakarot'
-        },
-        {
-            username: 'The Strongest Ever',
-            name: 'Vegeta'
-        },
-        {
-            username: 'ProfessorGo',
-            name: 'Gohan'
-        },
-        {
-            username:
-                'Time Traveller Trunks',
-            name: 'Trunks'
-        },
-        {
-            username: 'Really Son Goku',
-            name: 'Kakarot'
-        },
-        {
-            username: 'The Strongest Ever',
-            name: 'Vegeta'
-        },
-        {
-            username: 'ProfessorGo',
-            name: 'Gohan'
-        },
-        {
-            username:
-                'Time Traveller Trunks',
-            name: 'Trunks'
-        }
-    ]
 }
 
 export default FollowList

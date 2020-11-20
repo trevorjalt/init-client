@@ -16,7 +16,9 @@ function BurgerNav() {
                         onKeyDown={e => e.key === 'Enter' ? setShowNav(!showNav) : null}
                         className='burger-wrapper'
                         tabIndex='0'
-                        role='button' aria-label='navigation-menu-clickable' aria-expanded='false'>
+                        role='button' 
+                        aria-label='navigation-menu-clickable' 
+                        aria-expanded='false'>
 
                         <span className='burger-line burger-line-one'></span>
                         <span className='burger-line burger-line-two'></span>
@@ -52,8 +54,8 @@ function BurgerNav() {
                             </Link>
                                     </span>
                                     <span className='navigation-item nav-item-two' onClick={() => setShowNav(true)}>
-                                        <Link to='/connections' className='navigation-link'>
-                                            Connections
+                                        <Link to='/account' className='navigation-link'>
+                                            Account
                             </Link>
                                     </span>
                                     <span
