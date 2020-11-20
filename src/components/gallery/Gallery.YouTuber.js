@@ -1,3 +1,5 @@
+// Want to understand this better? try this video https://www.youtube.com/watch?v=NZKUirTtxcg
+
 //useState is for allowing state to be used in Functional Components
 //useRef allows for a value to persist after a render. A reference value, essentially
 //useCallback works in conjunction with useRef to dynamically update the reference value at the end of our page

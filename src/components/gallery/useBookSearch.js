@@ -1,3 +1,7 @@
+// Want to understand this better? try this video https://www.youtube.com/watch?v=NZKUirTtxcg
+
+//useEffect takes in two arguments, one being a function and the other being variables
+//Whenever the second argument, the variables, are altered the first argument will then be activated
 import { useEffect, useState } from 'react';
 //people really do be loving this this Axios
 import axios from 'axios';
@@ -75,6 +79,6 @@ export default function useBookSerach(query, pageNumber) {
             setError(true)
         })
         return () => cancel()
-    }, [query, pageNumber])
-    return { loading, error, books, hasMore}
+    }, [query, pageNumber]);
+    return { loading, error, books, hasMore};
 };
