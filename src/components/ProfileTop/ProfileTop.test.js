@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ProfileTop from ./ProfileTop';
+import ProfileTop from './ProfileTop';
 
 it('renders without crashing', () => {
     const div = document.createElement('div');
