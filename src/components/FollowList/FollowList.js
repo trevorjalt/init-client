@@ -5,7 +5,7 @@ import FollowService from '../../services/follow-service';
 import '../../css/FollowList.css'
 
 function FollowList(props) {
-    const [toggleFollow, setToggleFollow] = useState(false)
+    const [toggleFollow, setToggleFollow] = useState(true)
 
     const [followedByUser, setFollowedByUser] = useState([])
     const [followingUser, setFollowingUser] = useState([])
@@ -14,8 +14,6 @@ function FollowList(props) {
         getFollow()
 
     }, [])
-
-    console.log(followedByUser)
 
     const getFollow = async () => {
         try {
