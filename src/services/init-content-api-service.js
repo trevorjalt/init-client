@@ -11,28 +11,28 @@ const InitContentApiService = {
     //     })
     //         .then((res) => res.json())
     //         .then(res => console.log(res))
-            // .then(res =>
-            //   (!res.ok)
-            //       ? res.json().then(event => Promise.reject(event))
-            //       : res.json()
-            // )
+    // .then(res =>
+    //   (!res.ok)
+    //       ? res.json().then(event => Promise.reject(event))
+    //       : res.json()
+    // )
     // },
 
     postAvatar(file) {
-      fetch(`${config.API_ENDPOINT}/avatar/upload`, {
-          method: "POST",
-          body: new FormData(file),
-          headers: {
-              'authorization': `bearer ${TokenService.getAuthToken()}`
-          },
-      })
-          .then(res => {
-              console.log(res)
-              // this.props.history.push('/account')
-          })
-          .catch(err => {
-              console.log('Upload failed', err)
-          })
+        fetch(`${config.API_ENDPOINT}/avatar/upload`, {
+            method: "POST",
+            body: new FormData(file),
+            headers: {
+                'authorization': `bearer ${TokenService.getAuthToken()}`
+            },
+        })
+            .then(res => {
+                console.log(res)
+                // this.props.history.push('/account')
+            })
+            .catch(err => {
+                console.log('Upload failed', err)
+            })
     }
 }
 

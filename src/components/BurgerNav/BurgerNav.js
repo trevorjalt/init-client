@@ -54,8 +54,8 @@ function BurgerNav() {
                             </Link>
                                     </span>
                                     <span className='navigation-item nav-item-two' onClick={() => setShowNav(true)}>
-                                        <Link to='/connections' className='navigation-link'>
-                                            Connections
+                                        <Link to='/account' className='navigation-link'>
+                                            Account
                             </Link>
                                     </span>
                                     <span
