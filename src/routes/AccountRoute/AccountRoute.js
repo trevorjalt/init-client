@@ -1,16 +1,20 @@
 import React, { Component } from 'react';
 import AccountInformation from '../../components/AccountInformation/AccountInformation'
-import './AccountRoute.css';
+import UserContext from '../../contexts/userContext'
+
 
 class AccountRoute extends Component {
     render() {
         return (
-            <div>
+            <section className='account-route'>
                 <h2>Account</h2>
-                <AccountInformation />
-            </div>
+                <UserContext.Consumer>
+                    {user => (
+                        <AccountInformation user={user}/>
+                    )}
+                </UserContext.Consumer>
+            </section>
         )
-
     }
 };
 

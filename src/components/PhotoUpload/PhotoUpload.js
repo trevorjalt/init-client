@@ -52,11 +52,11 @@ class PhotoUpload extends Component {
 
     renderPreview() {
         return (
-            <div>
+            <div className='upload-preview'>
                 <img 
                     src={this.state.data}  
                     alt='upload-preview' 
-                    className='upload-preview' 
+                    className='circular-landscape' 
                 />
             </div>
         )

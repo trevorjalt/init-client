@@ -5,12 +5,12 @@ import AvatarForm from '../../components/AvatarForm/AvatarForm'
 class AvatarUploadRoute extends Component {
     render() {
         return (
-            <div>
+            <section>
                 <h2>Avatar</h2>
                 <AvatarForm
                     history={this.props.history} 
                 />
-            </div>
+            </section>
         );
     };
 };

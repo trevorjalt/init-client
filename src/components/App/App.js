@@ -10,7 +10,7 @@ import Buzz from '../../routes/BuzzRoute/BuzzRoute';
 import Connections from '../../routes/ConnectionsRoute/ConnectionsRoute'
 import Feed from '../../routes/FeedRoute/FeedRoute';
 import Portfolio from '../../routes/PortfolioRoute/PortfolioRoute';
-import Account from '../../routes/AccountRoute/AccountRoute';
+import AccountRoute from '../../routes/AccountRoute/AccountRoute';
 import AvatarUploadRoute from '../../routes/AvatarUploadRoute/AvatarUploadRoute';
 import NewProject from '../../routes/NewProjectRoute/NewProjectRoute';
 import LoginRoute from '../../routes/LoginRoute/LoginRoute';
@@ -37,7 +37,7 @@ class App extends Component {
                 />
                 <PrivateRoute
                     path={'/account'}
-                    component={Account}
+                    component={AccountRoute}
                 />
                 <PrivateRoute
                     path={'/avatarupload'}

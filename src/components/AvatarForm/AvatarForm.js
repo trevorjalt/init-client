@@ -15,7 +15,7 @@ class AvatarForm extends Component {
     handleSubmit = (ev) => {
         ev.preventDefault()
 
-        const { setData, currentAvatar } = this.context
+        const { currentAvatar, setData } = this.context
 
 
         if (!currentAvatar.length) {

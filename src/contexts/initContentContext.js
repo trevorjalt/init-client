@@ -5,7 +5,7 @@ import InitContentApiService from '../services/init-content-api-service'
 // import IdleService from '../services/idle-service'
 
 const InitContentContext = React.createContext({
-    data: {},
+    data: null,
     currentAvatar: {},
     setCurrentAvatar: () => {},
     setData: () => {},
@@ -19,6 +19,11 @@ export class InitContentProvider extends Component {
       currentAvatar: {}
     }
 
+    // this component did mount sets the state of currentAvatar, allowing us 
+    // to run a check for avatar uploads: if one exists, the client makes a 
+    // patch request for the existing avatar.  If it doesn't, the client makes 
+    // a post request.  
+    
     componentDidMount() {
         // this.context.clearError()
         InitContentApiService.getAvatar()
