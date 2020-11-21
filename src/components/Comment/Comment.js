@@ -9,7 +9,7 @@ function Comment(props) {
                 <Link to={`/user/${props.user_id}`}>
                     <p className='comment-username'>{props.username}</p>
                 </Link>
-                <p className='comment-date-created'>{props.date_created}</p>
+                <p className='comment-date-created'>{props.date_created.slice(0, 13)}</p>
             </div>
             <p className='comment-body'>{props.text}</p>
         </div>

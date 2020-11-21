@@ -1,29 +1,88 @@
 
+section{
+    width: inherit;
+}
+.post-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: inherit;
+}
+
+.post-wrapper a{
+    display: block;
+}
+
+.comment-form{
+    width: inherit;
+    padding: var(--spacer-sm);
+    max-width: 750px;
+}
+
+.comment-form button{
+    width: 100px;
+    border-radius: 2px;
+    padding: 0;
+    align-self: flex-start;
+}
+
+.comment-form textarea{
+    margin-top: 5px;
+    width: 100%;
+    height: 10vh;
+}
+
+.post-user-wrapper{
+    display: flex;
+    width: inherit;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacer-sm);
+}
+
+.post-info-wrapper{
+    width: inherit;
+}
+
+
+.post-link-wrapper{
+    display: flex;
+    width: inherit;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
 .comment-data-wrapper{
 display: flex;
 flex-direction: column;
-max-width: 25%;
-padding-right: var(--spacer-sm);
+flex: 1;
+max-width: 24vw;
 font-size: 0.8rem;
 
 }
 
 .comment-body{
     flex: 3;
+    width: 100%;
+    padding-left: var(--spacer-sm);
+}
+
+.placeholder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
 }
 
 .comment-wrapper{
     width: inherit;
     display: flex;
+    max-width: 750px;
     justify-content: space-between;
     padding-bottom: var(--spacer-sm);
 }
 
-.post-wrapper{
-    display: flex;
-    justify-content: center;
-    align-self: flex-start;
-    flex-direction: column;
-    width: 90%;
-}
 
