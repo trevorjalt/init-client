@@ -1,5 +1,7 @@
 
-
+section{
+    width: inherit;
+}
 .post-wrapper{
     display: flex;
     flex-direction: column;
@@ -12,6 +14,24 @@
     display: block;
 }
 
+.comment-form{
+    width: inherit;
+    padding: var(--spacer-sm);
+    max-width: 750px;
+}
+
+.comment-form button{
+    width: 100px;
+    border-radius: 2px;
+    padding: 0;
+    align-self: flex-start;
+}
+
+.comment-form textarea{
+    margin-top: 5px;
+    width: 100%;
+    height: 10vh;
+}
 
 .post-user-wrapper{
     display: flex;
@@ -60,15 +80,9 @@ font-size: 0.8rem;
 .comment-wrapper{
     width: inherit;
     display: flex;
+    max-width: 750px;
     justify-content: space-between;
     padding-bottom: var(--spacer-sm);
 }
 
-.post-wrapper{
-    display: flex;
-    justify-content: center;
-    align-self: flex-start;
-    flex-direction: column;
-    width: inherit;
-}
 

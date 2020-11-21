@@ -61,20 +61,15 @@ const InitContentApiService = {
             )
     },
 
-    postComment(post_id, comment) {
+    postComment(post_id, text) {
         return fetch(`${config.API_ENDPOINT}/comment/${post_id}`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
                 'Authorization': `bearer ${TokenService.getAuthToken()}`,
             },
-            body: JSON.stringify({ post_id, comment })
+            body: JSON.stringify({ text })
         })
-            .then(res =>
-                (!res.ok)
-                    ? res.json().then(e => Promise.reject(e))
-                    : res.json()
-            )
 
     }
 

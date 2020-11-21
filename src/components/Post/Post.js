@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
 import Comment from '../Comment/Comment';
-import { useParams } from "react-router"
+import { useParams } from "react-router";
 import InitContentApiService from '../../services/init-content-api-service';
-import '../../css/Post.css'
-import ProfilePic from '../ProfilePic/ProfilePic'
+import '../../css/Post.css';
+import ProfilePic from '../ProfilePic/ProfilePic';
 import { Link } from 'react-router-dom';
+import CommentForm from '../CommentForm/CommentForm';
 
 function Post() {
     let { id } = useParams()
@@ -26,8 +27,6 @@ function Post() {
         getPost()
     }, [])
 
-    console.log(post)
-
     return (
         <section className='post-wrapper'>
 
@@ -45,15 +44,14 @@ function Post() {
                     <a _target='blank' href={post.repository} alt='view projects repository'><p>Repository</p></a>
                 </div>
                 <p>Tech stack: {post.tech_stack}</p>
-
             </div>
 
             <div className='placeholder'>
                 <h1>PLACEHOLDER</h1>
             </div>
 
-
             {comments.length ? comments.map(c => <Comment key={c.id} {...c} />) : null}
+            <CommentForm post_id={id} />
         </section>
     )
 }
