@@ -5,7 +5,7 @@ import FollowService from '../../services/follow-service';
 import '../../css/FollowList.css'
 
 function FollowList(props) {
-    const [toggleFollow, setToggleFollow] = useState(false)
+    const [toggleFollow, setToggleFollow] = useState(true)
 
     const [followedByUser, setFollowedByUser] = useState([])
     const [followingUser, setFollowingUser] = useState([])
@@ -60,7 +60,7 @@ function FollowList(props) {
                         </Link>
                         <div className='follow-name-wrapper'>
                             <h4>{f.username}</h4>
-                            <p>{f.name}</p>
+                            <p>{f.fullname}</p>
                         </div>
                     </div>
                     {toggleFollow

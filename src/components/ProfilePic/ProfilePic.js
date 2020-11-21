@@ -1,6 +1,5 @@
 import React from 'react';
-import defaultImg from '../../HAHA.jpg'
-
+import defaultImg from '../../HAHA.jpg';
 
 function ProfilePic(props) {
 
@@ -17,12 +16,10 @@ function ProfilePic(props) {
             <polygon points="50 1 95 25 95 75 50 99 5 75 5 25" fill="url(#img)" />
         </svg >
     );
-}
+};
 
 ProfilePic.defaultProps = {
     image: defaultImg
-}
+};
 
 export default ProfilePic;
-
-

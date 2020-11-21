@@ -1,0 +1,29 @@
+
+.comment-data-wrapper{
+display: flex;
+flex-direction: column;
+max-width: 25%;
+padding-right: var(--spacer-sm);
+font-size: 0.8rem;
+
+}
+
+.comment-body{
+    flex: 3;
+}
+
+.comment-wrapper{
+    width: inherit;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: var(--spacer-sm);
+}
+
+.post-wrapper{
+    display: flex;
+    justify-content: center;
+    align-self: flex-start;
+    flex-direction: column;
+    width: 90%;
+}
+
