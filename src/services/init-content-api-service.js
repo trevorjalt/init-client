@@ -36,7 +36,6 @@ const InitContentApiService = {
     },
 
     getPost(post_id) {
-        //not made in the back end yet
         return fetch(`${config.API_ENDPOINT}/post/${post_id}`, {
             headers: {
                 'Authorization': `bearer ${TokenService.getAuthToken()}`,

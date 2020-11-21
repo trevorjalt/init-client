@@ -1,15 +1,60 @@
 
+
+.post-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: inherit;
+}
+
+.post-wrapper a{
+    display: block;
+}
+
+
+.post-user-wrapper{
+    display: flex;
+    width: inherit;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacer-sm);
+}
+
+.post-info-wrapper{
+    width: inherit;
+}
+
+
+.post-link-wrapper{
+    display: flex;
+    width: inherit;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
 .comment-data-wrapper{
 display: flex;
 flex-direction: column;
-max-width: 25%;
-padding-right: var(--spacer-sm);
+flex: 1;
+max-width: 24vw;
 font-size: 0.8rem;
 
 }
 
 .comment-body{
     flex: 3;
+    width: 100%;
+    padding-left: var(--spacer-sm);
+}
+
+.placeholder{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
 }
 
 .comment-wrapper{
@@ -24,6 +69,6 @@ font-size: 0.8rem;
     justify-content: center;
     align-self: flex-start;
     flex-direction: column;
-    width: 90%;
+    width: inherit;
 }
 
