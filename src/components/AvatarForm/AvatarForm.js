@@ -10,16 +10,29 @@ class AvatarForm extends Component {
 
     state = {
         error: null,
+        currentAvatar: {},
+    }
+
+    // this component did mount sets the state of currentAvatar, allowing us 
+    // to run a check for avatar uploads: if one exists, the client makes a 
+    // patch request for the existing avatar.  If it doesn't, the client makes 
+    // a post request. 
+    componentDidMount() {
+        // this.context.clearError()
+        InitContentApiService.getAvatar()
+            .then(res => this.setState({ currentAvatar: res }))
+            // .catch(this.setState)
     }
 
     handleSubmit = (ev) => {
         ev.preventDefault()
-
-        const { currentAvatar, setData } = this.context
+        const currentAvatar= this.state.currentAvatar
+        const { setData } = this.context
 
 
         if (!currentAvatar.length) {
             InitContentApiService.postAvatar(ev.target)
+                // .then(setCurrentAvatar())
                 .then(() => this.props.history.push('/account'))
                 .then(setData())
                 .catch(error => {
@@ -27,6 +40,7 @@ class AvatarForm extends Component {
                 })
         } else {
             InitContentApiService.updateAvatar(ev.target, currentAvatar[0].id)
+                // .then(setCurrentAvatar())
                 .then(() => this.props.history.push('/account'))
                 .then(setData())
                 .catch(error => {
@@ -38,6 +52,8 @@ class AvatarForm extends Component {
     render() {
         const { error } = this.state
         const { data } = this.context
+        const currentAvatar = this.state.currentAvatar
+        console.log('avatar', currentAvatar)
 
         return (
             <form

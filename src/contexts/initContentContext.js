@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
-import InitContentApiService from '../services/init-content-api-service'
+// import InitContentApiService from '../services/init-content-api-service'
 // import AuthApiService from '../services/auth-api-service'
 // import TokenService from '../services/token-service'
 // import IdleService from '../services/idle-service'
 
 const InitContentContext = React.createContext({
     data: null,
-    currentAvatar: {},
-    setCurrentAvatar: () => {},
+    // currentAvatar: {},
+    // setCurrentAvatar: () => {},
     setData: () => {},
 })
 
@@ -16,24 +16,19 @@ export default InitContentContext
 export class InitContentProvider extends Component {
     state = {
       data: null,
-      currentAvatar: {}
-    }
-
-    // this component did mount sets the state of currentAvatar, allowing us 
-    // to run a check for avatar uploads: if one exists, the client makes a 
-    // patch request for the existing avatar.  If it doesn't, the client makes 
-    // a post request.  
+    //   currentAvatar: {}
+    }  
     
-    componentDidMount() {
-        // this.context.clearError()
-        InitContentApiService.getAvatar()
-            .then(res => this.setState({ currentAvatar: res }))
-            // .catch(this.context.setError)
-    }
+    // componentDidMount() {
+    //     // this.context.clearError()
+    //     InitContentApiService.getAvatar()
+    //         .then(res => this.setState({ currentAvatar: res }))
+    //         // .catch(this.context.setError)
+    // }
 
-    setCurrentAvatar = currentAvatar => {
-        this.setState({ currentAvatar })
-    }
+    // setCurrentAvatar = currentAvatar => {
+    //     this.setState({ currentAvatar })
+    // }
 
     setData = () => {
         console.log('setting data')
@@ -42,9 +37,9 @@ export class InitContentProvider extends Component {
 
     render() {
         const value = {
-            currentAvatar: this.state.currentAvatar,
+            // currentAvatar: this.state.currentAvatar,
             data: this.state.data,
-            setCurrentAvatar: this.setCurrentAvatar,
+            // setCurrentAvatar: this.setCurrentAvatar,
             setData: this.setData,
         }
         return (
