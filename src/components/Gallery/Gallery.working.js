@@ -44,16 +44,16 @@ let dataSource = [
   { title: 'He is a tough kid', pic: image6, id: 1 },
   { title: 'Posing with the Clown', pic: image7, id: 1 },
   //dubs
-  { title: 'My Baby Saiyan Warrior', pic: image8, id: 1 },
-  { title: 'My Feisty Wife', pic: image9, id: 1 },
-  { title: 'Glory Days', pic: image10, id: 1 },
-  { title: 'I am a legend', pic: image11, id: 1 },
-  { title: 'The Best Family', pic: image12, id: 1 },
-  { title: 'He is a tough kid', pic: image13, id: 1 },
-  { title: 'Posing with the Clown', pic: image14, id: 1 },
+  { title: 'My Baby Saiyan Warrior', pic: image8, id: 2 },
+  { title: 'My Feisty Wife', pic: image9, id: 2 },
+  { title: 'Glory Days', pic: image10, id: 2 },
+  { title: 'I am a legend', pic: image11, id: 2 },
+  { title: 'The Best Family', pic: image12, id: 2 },
+  { title: 'He is a tough kid', pic: image13, id: 2 },
+  { title: 'Posing with the Clown', pic: image14, id: 2 },
   //trips
-  { title: 'My Baby Saiyan Warrior', pic: image15, id: 1 },
-  { title: 'My Feisty Wife', pic: image16, id: 1 },
+  { title: 'My Baby Saiyan Warrior', pic: image15, id: 2 },
+  { title: 'My Feisty Wife', pic: image16, id: 2 },
   { title: 'Glory Days', pic: image17, id: 1 },
   { title: 'I am a legend', pic: image18, id: 1 },
   { title: 'The Best Family', pic: image19, id: 1 },
@@ -77,7 +77,7 @@ class Gallery extends Component {
     return (
       <div className='gallery'>
         {images.map((image, index) => (
-          <Link className='img-container' to={`/post/${image.id}`}>
+          <Link className='img-container' key={index} to={`/post/${image.id}`}>
             <img className='gallery-img' src={image.pic.default} alt='gallery item' />
           </Link>
         ))}

@@ -67,6 +67,12 @@ class App extends Component {
                     path={'/post/:id'}
                     component={Post}
                 />
+
+                <PrivateRoute
+                    path={'/user/:id'}
+                    component={Post}
+                />
+
             </Switch>
         );
     };
