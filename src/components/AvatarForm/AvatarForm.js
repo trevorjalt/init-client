@@ -1,19 +1,11 @@
 import React, { Component } from 'react'
-import TokenService from '../../services/token-service'
 import InitContentContext from '../../contexts/initContentContext'
 import InitContentApiService from '../../services/init-content-api-service'
 import PhotoUpload from '../PhotoUpload/PhotoUpload'
-import '../../css/Form.css'
+import '../../css/AvatarForm.css'
 
 
 class AvatarForm extends Component {
-    // static defaultProps = {
-    //     location: {},
-    //     history: {
-    //         push: () => {},
-    //     },
-    // }
-
     static contextType = InitContentContext
 
     state = {
@@ -22,18 +14,30 @@ class AvatarForm extends Component {
 
     handleSubmit = (ev) => {
         ev.preventDefault()
-        InitContentApiService.postAvatar(ev.target)
-    }
 
-    // handleUploadSuccess = () => {
-    //     const { location, history } = this.props
-    //     console.log(location)
-    //     const destination = (location.state || {}).from || '/account'
-    //     history.push(destination)
-    // }
+        const { setData, currentAvatar } = this.context
+
+
+        if (!currentAvatar.length) {
+            InitContentApiService.postAvatar(ev.target)
+                .then(() => this.props.history.push('/account'))
+                .then(setData())
+                .catch(error => {
+                    this.setState({ error })
+                })
+        } else {
+            InitContentApiService.updateAvatar(ev.target, currentAvatar[0].id)
+                .then(() => this.props.history.push('/account'))
+                .then(setData())
+                .catch(error => {
+                    this.setState({ error })
+                })
+        }
+    }
 
     render() {
         const { error } = this.state
+        const { data } = this.context
 
         return (
             <form
@@ -46,10 +50,31 @@ class AvatarForm extends Component {
                     className='error-message'
                     aria-live='assertive'
                 >
-                    {error && <p>{error}</p>}
+                    {error && <p>{error.message}</p>}
                 </div>
                 <PhotoUpload />
-                <button type='submit'>
+                <div className='avatar-form-input'>
+                    <label 
+                        htmlFor='avatar-image-name-input'
+                        aria-label='avatar-image-name-input'
+                        className='avatar-form-label'
+                    />
+                    <input
+                        id='avatar-image-name-input'
+                        name='avatar-image-name-input'
+                        type='text'
+                        className='avatar-form-input'
+                        placeholder='Enter a name for your image'
+                        aria-required='false'
+                        autoComplete='off'
+                    >
+                    </input>
+                </div>
+                <button 
+                    type='submit'
+                    className='avatar-form-submit-button'
+                    disabled={!data}
+                >
                     Upload Avatar
                 </button>
             </form>

@@ -1,39 +1,31 @@
 import React, { Component } from 'react';
-import UserContext from '../../contexts/userContext'
+import InitContentContext from '../../contexts/initContentContext'
 import { buffTo64 } from '../../components/Utils/Utils'
 import InitContentApiService from '../../services/init-content-api-service'
-import config from '../../config'
-import TokenService from '../../services/token-service'
 
 
 class Feed extends Component {
-    // static defaultProps = {
-    //     setState: {
-    //         setState: () => {},
-    //     },
-    // }
-
-    static contextType = UserContext
+    static contextType = InitContentContext
 
     state = {
         photos: []
     }
 
-    // getAvatar = () => { }
+    componentDidMount() {
+        const { setCurrentAvatar } = this.context
+        InitContentApiService.getAvatar()
+            .then(res => setCurrentAvatar({ currentAvatar: res }))
+            // .catch(this.context.setError)
+    }
 
-    getAvatar = () => {
-      fetch(`${config.API_ENDPOINT}/avatar/download`, {
-          method: "GET",
-          headers: {
-              'authorization': `bearer ${TokenService.getAuthToken()}`
-          },
-      })
-          .then((res) => res.json())
-        //   .then(res => console.log('response', res))
-          .then(res => this.setState({ photos: res }))
-          .catch((err) => {
-              console.log("Went Wrong", err);
-          })
+    handleGetAvatar = ev => {
+        ev.preventDefault()
+
+        InitContentApiService.getAvatar()
+            .then(res => this.setState({ photos: res }))
+            .catch((err) => {
+                console.log("Went Wrong", err);
+        })
     }
 
     renderPhotos() {
@@ -57,12 +49,10 @@ class Feed extends Component {
     }
 
     render() {
-        const { user } = this.context
-        console.log(user) 
         return (
             <div>
                 <h1>Le Feed</h1>
-                <button onClick={this.getAvatar}>Click Me</button>
+                <button onClick={this.handleGetAvatar}>Click Me</button>
                 {this.renderPhotos()}
             </div>
         );

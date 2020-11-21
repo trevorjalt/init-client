@@ -7,7 +7,9 @@ class AvatarUploadRoute extends Component {
         return (
             <div>
                 <h2>Avatar</h2>
-                <AvatarForm />
+                <AvatarForm
+                    history={this.props.history} 
+                />
             </div>
         );
     };
