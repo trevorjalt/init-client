@@ -33,7 +33,68 @@ const InitContentApiService = {
             .catch(err => {
                 console.log('Upload failed', err)
             })
+    },
+
+    getPost(post_id) {
+        //not made in the back end yet
+        return fetch(`${config.API_ENDPOINT}/post/${post_id}`, {
+            headers: {
+                'Authorization': `bearer ${TokenService.getAuthToken()}`,
+            }
+        })
+            .then(res =>
+                (!res.ok)
+                    ? res.json().then(e => Promise.reject(e))
+                    : res.json()
+            )
+    },
+
+    getPostComments(post_id) {
+        return fetch(`${config.API_ENDPOINT}/comment/${post_id}`, {
+            headers: {
+                'Authorization': `bearer ${TokenService.getAuthToken()}`,
+            }
+        })
+            .then(res =>
+                (!res.ok)
+                    ? res.json().then(e => Promise.reject(e))
+                    : res.json()
+            )
+    },
+
+    postComment(post_id, comment) {
+        return fetch(`${config.API_ENDPOINT}/comment/${post_id}`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+                'Authorization': `bearer ${TokenService.getAuthToken()}`,
+            },
+            body: JSON.stringify({ post_id, comment })
+        })
+            .then(res =>
+                (!res.ok)
+                    ? res.json().then(e => Promise.reject(e))
+                    : res.json()
+            )
+
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
+
+
+
 
 export default InitContentApiService

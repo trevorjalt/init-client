@@ -16,6 +16,7 @@ import NewProject from '../../routes/NewProjectRoute/NewProjectRoute';
 import LoginRoute from '../../routes/LoginRoute/LoginRoute';
 import RegistrationRoute from '../../routes/RegistrationRoute/RegistrationRoute';
 import Footer from '../Footer/Footer';
+import Post from '../Post/Post';
 
 class App extends Component {
     renderRoutes() {
@@ -61,6 +62,10 @@ class App extends Component {
                 <PrivateRoute
                     path={'/portfolio'}
                     component={Portfolio}
+                />
+                <PrivateRoute
+                    path={'/post/:id'}
+                    component={Post}
                 />
             </Switch>
         );
