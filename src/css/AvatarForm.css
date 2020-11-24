@@ -1,0 +1,28 @@
+.avatar-form-submit-button {
+    width: 100vw;
+    height: 8vh;
+}
+
+.avatar-form-label {
+    display: none;
+}
+
+.avatar-form-input {
+    width: 100vw;
+    /* background-color: rgba(238, 198, 249, 0.5); */
+    height: 8vh;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: hidden;
+    margin-top: 0;
+
+}
+
+form {
+    margin-bottom: 0;
+}
+
+.no-outline:focus {
+    outline: none;
+}

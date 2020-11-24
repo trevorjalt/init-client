@@ -8,6 +8,7 @@ main {
     width: 100%;
     color: var(--colors-black);
     font-family: var(--font);
+    display: flex;
 }
 
 section{
@@ -21,6 +22,24 @@ button{
     font-size: var(--font-size-sm);
     font-family: var(--font);
 }
+
+.circular-landscape {
+    display: inline-block;
+    position: relative;
+    width: 250px;
+    height: 250px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 3px solid;
+    border-color: var(--colors-accent);
+}
+  
+.circular-landscape img {
+    width: auto;
+    height: 100%;
+    margin-left: -50px;
+}
+
 h1{
     font-size: 1.7rem;
     color: var(--colors-accent);
@@ -64,8 +83,20 @@ button:focus {
     margin-top: var(--spacer-sm);
 }
 
+@media all and (min-width: 500px){
+    .circular-landscape {
+        width: 350px;
+        height: 350px;
+    }
+}
+
 @media only screen and (min-width: 800px) {
     .error-message {
         width: 70vw;
+    }
+
+    .circular-landscape {
+        width: 450px;
+        height: 450px;
     }
 }

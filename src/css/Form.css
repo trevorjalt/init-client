@@ -1,3 +1,7 @@
+.account-login-link {
+    margin: 6vh 0 6vh 0;
+}
+
 form {
     display: flex;
     flex-direction: column;

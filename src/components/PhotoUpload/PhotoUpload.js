@@ -2,14 +2,9 @@ import React, { Component } from 'react'
 import initContentContext from '../../contexts/initContentContext'
 import AvatarDefault from '../Footer/Images/avatar-default.png'
 import UploadLogo from '../Footer/Images/upload-logo.png'
-// import ProfilePic from '../ProfilePic/ProfilePic'
 import '../../css/PhotoUpload.css'
 
 class PhotoUpload extends Component {
-    static defaultProps = {
-        onLoginSuccess: () => { }
-    }
-
     static contextType = initContentContext
 
     state = { 
@@ -28,6 +23,10 @@ class PhotoUpload extends Component {
     changeFile = (ev) => {
         const { setData } = this.context
 
+        if(!ev.target.files.length) {
+            return
+        }
+
         if(this.checkExtension(ev.target.files[0].name)) {
             this.readFile(ev.target.files[0]).then(file=>{
                 if(file.file.size <= 1048576) {
@@ -41,7 +40,7 @@ class PhotoUpload extends Component {
                 } else {
                 this.setState({ error: 'File Size Larger Than 1MB' })
                 }
-                setData(this.state.file)
+                setData()
             }).catch(err=>{
                 console.log('ERROR:-', err)
                 this.setState({ error: err })
@@ -53,11 +52,11 @@ class PhotoUpload extends Component {
 
     renderPreview() {
         return (
-            <div>
+            <div className='upload-preview'>
                 <img 
                     src={this.state.data}  
                     alt='upload-preview' 
-                    className='upload-preview' 
+                    className='circular-landscape' 
                 />
             </div>
         )

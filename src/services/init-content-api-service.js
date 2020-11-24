@@ -2,37 +2,86 @@ import config from '../config'
 import TokenService from './token-service'
 
 const InitContentApiService = {
-    // getAvatar() {
-    //     fetch(`${config.API_ENDPOINT}/avatar/download`, {
-    //         method: "GET",
-    //         headers: {
-    //             'authorization': `bearer ${TokenService.getAuthToken()}`
-    //         },
-    //     })
-    //         .then((res) => res.json())
-    //         .then(res => console.log(res))
-    // .then(res =>
-    //   (!res.ok)
-    //       ? res.json().then(event => Promise.reject(event))
-    //       : res.json()
-    // )
-    // },
+    getAvatar() {
+        return fetch(`${config.API_ENDPOINT}/avatar/download`, {
+            method: "GET",
+            headers: {
+                'authorization': `bearer ${TokenService.getAuthToken()}`
+            },
+        })
+            .then(res =>
+                (!res.ok)
+                    ? res.json().then(event => Promise.reject(event))
+                    : res.json()
+            )
+    },
 
     postAvatar(file) {
-        fetch(`${config.API_ENDPOINT}/avatar/upload`, {
+        return fetch(`${config.API_ENDPOINT}/avatar/upload`, {
             method: "POST",
             body: new FormData(file),
             headers: {
                 'authorization': `bearer ${TokenService.getAuthToken()}`
             },
         })
-            .then(res => {
-                console.log(res)
-                // this.props.history.push('/account')
-            })
-            .catch(err => {
-                console.log('Upload failed', err)
-            })
+            .then(res =>
+                (!res.ok)
+                    ? res.json().then(event => Promise.reject(event))
+                    : res
+            )
+    },
+
+    updateAvatar(file, update) {
+        return fetch (`${config.API_ENDPOINT}/avatar/upload/${update}`, {
+            method: 'PATCH',
+            body: new FormData(file), 
+            headers: {
+                'authorization': `bearer ${TokenService.getAuthToken()}`
+            }, 
+        })
+            .then(res =>
+                (!res.ok)
+                    ? res.json().then(event => Promise.reject(event))
+                    : null
+            )
+    },
+
+    getPost(post_id) {
+        return fetch(`${config.API_ENDPOINT}/post/${post_id}`, {
+            headers: {
+                'Authorization': `bearer ${TokenService.getAuthToken()}`,
+            }
+        })
+            .then(res =>
+                (!res.ok)
+                    ? res.json().then(e => Promise.reject(e))
+                    : res.json()
+            )
+    },
+
+    getPostComments(post_id) {
+        return fetch(`${config.API_ENDPOINT}/comment/${post_id}`, {
+            headers: {
+                'Authorization': `bearer ${TokenService.getAuthToken()}`,
+            }
+        })
+            .then(res =>
+                (!res.ok)
+                    ? res.json().then(e => Promise.reject(e))
+                    : res.json()
+            )
+    },
+
+    postComment(post_id, text) {
+        return fetch(`${config.API_ENDPOINT}/comment/${post_id}`, {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+                'Authorization': `bearer ${TokenService.getAuthToken()}`,
+            },
+            body: JSON.stringify({ text })
+        })
+
     }
 }
 

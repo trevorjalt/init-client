@@ -180,12 +180,13 @@ class RegistrationForm extends Component {
                     >
                         Sign up
                     </button>
-                    <Link 
-                        to='/login'
-                        className='account-link'
-                    >
-                        Already have an account?
-                    </Link>
+                    <div className='account-login-link'>
+                        <Link 
+                            to='/login'
+                        >
+                            Already have an account?
+                        </Link>
+                    </div>
                 </div>
             </form>
         )

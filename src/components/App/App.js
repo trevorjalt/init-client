@@ -10,12 +10,13 @@ import Buzz from '../../routes/BuzzRoute/BuzzRoute';
 import Connections from '../../routes/ConnectionsRoute/ConnectionsRoute'
 import Feed from '../../routes/FeedRoute/FeedRoute';
 import Portfolio from '../../routes/PortfolioRoute/PortfolioRoute';
-import Account from '../../routes/AccountRoute/AccountRoute';
+import AccountRoute from '../../routes/AccountRoute/AccountRoute';
 import AvatarUploadRoute from '../../routes/AvatarUploadRoute/AvatarUploadRoute';
 import NewProject from '../../routes/NewProjectRoute/NewProjectRoute';
 import LoginRoute from '../../routes/LoginRoute/LoginRoute';
 import RegistrationRoute from '../../routes/RegistrationRoute/RegistrationRoute';
 import Footer from '../Footer/Footer';
+import Post from '../Post/Post';
 
 class App extends Component {
     renderRoutes() {
@@ -36,7 +37,7 @@ class App extends Component {
                 />
                 <PrivateRoute
                     path={'/account'}
-                    component={Account}
+                    component={AccountRoute}
                 />
                 <PrivateRoute
                     path={'/avatarupload'}
@@ -62,6 +63,16 @@ class App extends Component {
                     path={'/portfolio'}
                     component={Portfolio}
                 />
+                <PrivateRoute
+                    path={'/post/:id'}
+                    component={Post}
+                />
+
+                <PrivateRoute
+                    path={'/user/:id'}
+                    component={Post}
+                />
+
             </Switch>
         );
     };
