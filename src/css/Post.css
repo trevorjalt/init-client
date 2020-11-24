@@ -13,7 +13,6 @@ section{
 }
 .post-detail-wrapper{
     width: inherit;
-    background-color: var(--colors-accent-light);
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -50,7 +49,6 @@ section{
     justify-content: space-between;
     align-items: center;
     padding: var(--spacer-sm);
-    background-color: white;
 }
 
 .post-info-wrapper{
@@ -76,7 +74,6 @@ max-width: 30vw;
 }
 
 .desc-wrapper{
-    background-color: white;
     align-self: center;
 }
 .comment-body{

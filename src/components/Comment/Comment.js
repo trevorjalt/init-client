@@ -4,7 +4,6 @@ import { format } from 'date-fns';
 
 function Comment(props) {
     const d = new Date(props.date_created)
-    console.log(d)
     return (
         <div className='comment-wrapper'>
             <div className='comment-data-wrapper'>

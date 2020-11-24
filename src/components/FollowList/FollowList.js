@@ -28,21 +28,21 @@ function FollowList(props) {
 
     const handleUnfollow = async (id) => {
         try {
-            await FollowService.unfollow(id)
-            return await getFollow()
+            const followers = await FollowService.unfollow(id)
+            setFollowedByUser(followers)
         }
-        catch {
-            return err => console.log(err)
+        catch (error) {
+            console.log(error)
         }
     }
 
     const handleFollow = async (id) => {
         try {
-            await FollowService.follow(id)
-            return await getFollow()
+            const followers = await FollowService.follow(id)
+            setFollowedByUser(followers)
         }
-        catch {
-            return err => console.log(err)
+        catch (error) {
+            console.log(error)
         }
 
 

@@ -32,12 +32,12 @@ const InitContentApiService = {
     },
 
     updateAvatar(file, update) {
-        return fetch (`${config.API_ENDPOINT}/avatar/upload/${update}`, {
+        return fetch(`${config.API_ENDPOINT}/avatar/upload/${update}`, {
             method: 'PATCH',
-            body: new FormData(file), 
+            body: new FormData(file),
             headers: {
                 'authorization': `bearer ${TokenService.getAuthToken()}`
-            }, 
+            },
         })
             .then(res =>
                 (!res.ok)
@@ -81,6 +81,11 @@ const InitContentApiService = {
             },
             body: JSON.stringify({ text })
         })
+            .then(res =>
+                (!res.ok)
+                    ? res.json().then(e => Promise.reject(e))
+                    : res.json()
+            )
 
     }
 }
