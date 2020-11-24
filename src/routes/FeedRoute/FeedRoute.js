@@ -11,12 +11,12 @@ class Feed extends Component {
         photos: []
     }
 
-    componentDidMount() {
-        const { setCurrentAvatar } = this.context
-        InitContentApiService.getAvatar()
-            .then(res => setCurrentAvatar({ currentAvatar: res }))
-            // .catch(this.context.setError)
-    }
+    // componentDidMount() {
+    //     const { setCurrentAvatar } = this.context
+    //     InitContentApiService.getAvatar()
+    //         .then(res => setCurrentAvatar({ currentAvatar: res }))
+    //         // .catch(this.context.setError)
+    // }
 
     handleGetAvatar = ev => {
         ev.preventDefault()

@@ -17,10 +17,11 @@
 
 .upload-default-avatar {
     width: 70vw;
+    margin-top: 6vh;
 }
 
 .upload-preview {
-    width: 100vw;
+    margin-top: 5vh;
 }
 
 .original-input {
