@@ -6,10 +6,11 @@ import HiveFeed from './Images/feed-logo.png';
 import Swarm from './Images/connect-logo.png';
 import Buzz from './Images/notification-logo.png';
 import Account from './Images/default-profile-logo.png';
-import TokenService from '../../services/token-service';
+import UserContext from '../../contexts/userContext'
 
 
 export default class Footer extends Component {
+    static contextType = UserContext;
 
     renderFooterLoggedIn() {
         return (
@@ -62,9 +63,11 @@ export default class Footer extends Component {
     }
 
     render() {
+        const { isLoggedIn } = this.context;
+
         return (
-            <div className='FooterWrapper'>{
-                TokenService.hasAuthToken()
+            <div className='FooterWrapper'>
+                {isLoggedIn
                     ? this.renderFooterLoggedIn()
                     : this.renderFooterLoggedOut()}
             </div>
