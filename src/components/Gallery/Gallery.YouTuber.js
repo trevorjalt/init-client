@@ -7,6 +7,7 @@
 import React, { useState, useRef, useCallback } from 'react';
 import { useParams } from 'react-router';
 import useBookSearch from './useBookSearch';
+import GallerySearch from './GallerySearch';
 
 // Placeholder images
 const image1 = require('../../pictures/BabyTrunks.jpg');
@@ -83,7 +84,7 @@ export default function Gallery() {
   const [limit] = useState(2);
 
   //Here we destructure our useBookSearch
-  const { results, hasMore, loading, error } = useBookSearch(observed, pageNumber, limit);
+  const { results, hasMore, loading, error } = GallerySearch(observed, pageNumber, limit);
   console.log('results?', results)
 
   //Observer starts off Null
@@ -121,15 +122,15 @@ export default function Gallery() {
   return (
     <>
       <input type='text' value={query} onChange={handleSearch}></input>
-      {/* We now map our results. They are all unique because of that Set thing we use in useBookSearch so the result can double as the Key */}
+      {/* We now map our results. They are all unique because of that Set thing we use in useresultsearch so the result can double as the Key */}
       {results.map((result, index) => {
         console.log('what a result', result)
         //Index + 1 is the final result that shows up, so it become our lastResult reference value
         //All the other results get rendered without needing to update the lastResultElementRef
         if (results.length === index + 1) {
-          return <div className='returns' ref={lastResultElementRef} key={result.id}>{result.post_title}</div>
+          return <div className='returns' ref={lastResultElementRef} key={result}>{result}</div>
         } else {
-        return <div className='returns' key={result.id}>{result.post_title}</div>
+        return <div className='returns' key={result}>{result}</div>
       }})}
       <div>{loading && 'Loading...'}</div>
       <div>{error && 'Error'}</div>
