@@ -5,7 +5,7 @@ function CommentForm(props) {
     const [error, setError] = useState(null)
     const [text, setText] = useState('')
 
-    const handleSubmit = e => {
+    const handleSubmit = async e => {
         e.preventDefault()
 
         if (!text.length) {
@@ -13,7 +13,11 @@ function CommentForm(props) {
             return null;
         }
 
-        InitContentApiService.postComment(props.post_id, text)
+        setText('')
+        const response = await InitContentApiService.postComment(props.post_id, text)
+        props.setComments(response)
+
+
 
     }
 
@@ -35,9 +39,6 @@ function CommentForm(props) {
                 placeholder='Write a comment...'
                 value={text}
                 onChange={(e) => setText(e.target.value)} />
-
-
-
             <button
                 type='submit'
                 className='form-button'>
