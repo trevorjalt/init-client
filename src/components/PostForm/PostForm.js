@@ -68,7 +68,7 @@ class PostForm extends Component {
                     />
                     <input
                         id='init-project-title-input'
-                        name='init-project-title-input'
+                        name='post_title'
                         type='text'
                         className='project-form-input'
                         placeholder='Enter a title for your project'
@@ -83,7 +83,7 @@ class PostForm extends Component {
                     />
                     <input
                         id='init-project-description-input'
-                        name='init-project-description-input'
+                        name='post_description'
                         type='text'
                         className='project-form-input'
                         placeholder='Enter a description for your project'
@@ -91,9 +91,14 @@ class PostForm extends Component {
                         autoComplete='off'
                     >
                     </input>
+                    <label 
+                        htmlFor='init-project-live-link-input'
+                        aria-label='init-project-live-link-input'
+                        className='project-form-label'
+                    />
                     <input
                         id='init-project-live-link-input'
-                        name='init-project-live-link-input'
+                        name='post_live_link'
                         type='text'
                         className='project-form-input'
                         placeholder='Enter a url for your live project'
@@ -101,9 +106,14 @@ class PostForm extends Component {
                         autoComplete='off'
                     >
                     </input>
+                    <label 
+                        htmlFor='init-project-repository-input'
+                        aria-label='init-project-repository-input'
+                        className='project-form-label'
+                    />
                     <input
-                        id='init-project-live-link-input'
-                        name='init-project-live-link-input'
+                        id='init-project-repository-input'
+                        name='post_repository'
                         type='text'
                         className='project-form-input'
                         placeholder='Enter a url for your live project'
@@ -111,9 +121,14 @@ class PostForm extends Component {
                         autoComplete='off'
                     >
                     </input>
+                    <label 
+                        htmlFor='init-project-tech-stack-input'
+                        aria-label='init-project-tech-stack-input'
+                        className='project-form-label'
+                    />
                     <input
                         id='init-project-tech-stack-input'
-                        name='init-project-tech-stack-link-input'
+                        name='tech_stack'
                         type='text'
                         className='project-form-input'
                         placeholder='Enter your project tech stack'
