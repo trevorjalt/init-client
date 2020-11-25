@@ -7,7 +7,7 @@ import { buffTo64 } from '../Utils/Utils'
 
 import '../../css/AccountInformation.css'
 
-class Gallery extends Component {
+class GalleryReference extends Component {
     static contextType = InitContentContext
 
     state = {
@@ -96,4 +96,4 @@ class Gallery extends Component {
     }
 };
 
-export default Gallery;
+export default GalleryReference;

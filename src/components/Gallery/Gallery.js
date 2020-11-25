@@ -17,7 +17,7 @@ import '../../css/AccountInformation.css'
 
 export default function Gallery() {
   const [observed, setObserver] = useState(false);
-  const [query, setQuery] = useState('');
+  // const [query, setQuery] = useState('');
   const [pageNumber, setPageNumber] = useState(1);
   const [limit] = useState(2);
 
@@ -63,15 +63,26 @@ return (
     ? <span>''</span>
     : <div>
     <div className='gallery'>
-        {results.map(project => (
-            <div key={project.id} className='img-container'>                        
-                <img
-                    className='gallery-img'
-                    alt={`project ${project.post_title}`}
-                    src={`data:image/${project.post_image_type};base64,${buffTo64(project.post_image_file.data)}`}
-                />
-            </div>
-        ))}
+        {results.map((project, index) => {
+            if (results.length === index + 1) {
+              return <div key={project.id} className='img-container' ref={lastResultElementRef}>                        
+                        <img
+                            className='gallery-img'
+                            alt={`project ${project.post_title}`}
+                            src={`data:image/${project.post_image_type};base64,${buffTo64(project.post_image_file.data)}`}
+                        />
+                    </div>
+            } else {
+              return <div key={project.id} className='img-container'>                        
+                        <img
+                            className='gallery-img'
+                            alt={`project ${project.post_title}`}
+                            src={`data:image/${project.post_image_type};base64,${buffTo64(project.post_image_file.data)}`}
+                        />
+                    </div>
+
+            }
+        })}
     </div>
     <div>{loading && 'Loading...'}</div>
     <div>{error && 'Error'}</div>
@@ -85,15 +96,15 @@ return (
   //   <>
   //     {/* <input type='text' value={query} onChange={handleSearch}></input> */}
   //     {/* We now map our results. They are all unique because of that Set thing we use in useresultsearch so the result can double as the Key */}
-  //     {results.map((result, index) => {
-  //       console.log('what a result', result)
-  //       //Index + 1 is the final result that shows up, so it become our lastResult reference value
-  //       //All the other results get rendered without needing to update the lastResultElementRef
-  //       if (results.length === index + 1) {
-  //         return <div className='returns' ref={lastResultElementRef} key={result}>{result}</div>
-  //       } else {
-  //       return <div className='returns' key={result}>{result}</div>
-  //     }})}
+      {results.map((result, index) => {
+        console.log('what a result', result)
+        //Index + 1 is the final result that shows up, so it become our lastResult reference value
+        //All the other results get rendered without needing to update the lastResultElementRef
+        if (results.length === index + 1) {
+          return <div className='returns' ref={lastResultElementRef} key={result}>{result}</div>
+        } else {
+        return <div className='returns' key={result}>{result}</div>
+      }})}
   //     <div>{loading && 'Loading...'}</div>
   //     <div>{error && 'Error'}</div>
   //   </>
