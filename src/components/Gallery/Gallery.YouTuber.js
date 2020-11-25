@@ -7,6 +7,7 @@
 import React, { useState, useRef, useCallback } from 'react';
 import { useParams } from 'react-router';
 import useBookSearch from './useBookSearch';
+import GallerySearch from './GallerySearch';
 
 // Placeholder images
 const image1 = require('../../pictures/BabyTrunks.jpg');
@@ -77,23 +78,25 @@ let dataSource = [
 ];
 
 export default function Gallery() {
-  //Next 3 Lines
+  const [observed, setObserver] = useState(false);
   const [query, setQuery] = useState('');
   const [pageNumber, setPageNumber] = useState(1);
+  const [limit] = useState(2);
 
   //Here we destructure our useBookSearch
-  const { books, hasMore, loading, error } = useBookSearch(query, pageNumber);
+  const { results, hasMore, loading, error } = GallerySearch(observed, pageNumber, limit);
+  console.log('results?', results)
 
   //Observer starts off Null
   //It is a ref that tells us where we should be
   //Our useCallback will disconnect it, then it must be set up to observe what ever the node is
   const observer = useRef()
   //Okay...
-  //The lastBookElementRef is a Reference Value which must be updated in conjunction with it's apperance on the page
+  //The lastResultElementRef is a Reference Value which must be updated in conjunction with it's apperance on the page
   //So our reference value is equal to a function that takes care of that
   //*Our reference value appear far below, in the Return, right next to our Key
   //If the page is loading we shouldn't be return anything, so that is accounted for
-  const lastBookElementRef = useCallback(node => {
+  const lastResultElementRef = useCallback(node => {
     if (loading) return;
     //This is how we clear the observer
     if (observer.current) observer.current.disconnect();
@@ -103,6 +106,7 @@ export default function Gallery() {
       if (entries[0].isIntersecting && hasMore) {
         console.log('Visible');
         setPageNumber(prevPageNumber => prevPageNumber + 1);
+        setObserver(!observed);
       }
     })
     if (node) observer.current.observe(node);
@@ -115,19 +119,18 @@ export default function Gallery() {
     setPageNumber(1);
   }
 
-  //Deleted the render
-  //replaced return with some book nerd stuff
   return (
     <>
       <input type='text' value={query} onChange={handleSearch}></input>
-      {/* We now map our books. They are all unique because of that Set thing we use in useBookSearch so the Book can double as the Key */}
-      {books.map((book, index) => {
-        //Index + 1 is the final book that shows up, so it become our lastBook reference value
-        //All the other books get rendered without needing to update the lastBookElementRef
-        if (books.length === index + 1) {
-          return <div ref={lastBookElementRef} key={book}>{book}</div>
+      {/* We now map our results. They are all unique because of that Set thing we use in useresultsearch so the result can double as the Key */}
+      {results.map((result, index) => {
+        console.log('what a result', result)
+        //Index + 1 is the final result that shows up, so it become our lastResult reference value
+        //All the other results get rendered without needing to update the lastResultElementRef
+        if (results.length === index + 1) {
+          return <div className='returns' ref={lastResultElementRef} key={result}>{result}</div>
         } else {
-        return <div key={book}>{book}</div>
+        return <div className='returns' key={result}>{result}</div>
       }})}
       <div>{loading && 'Loading...'}</div>
       <div>{error && 'Error'}</div>
