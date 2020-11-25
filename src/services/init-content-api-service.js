@@ -46,6 +46,21 @@ const InitContentApiService = {
             )
     },
 
+    postInitProject(file) {
+        return fetch(`${config.API_ENDPOINT}/post/upload`, {
+            method: "POST",
+            body: new FormData(file),
+            headers: {
+                'authorization': `bearer ${TokenService.getAuthToken()}`
+            },
+        })
+            .then(res =>
+                (!res.ok)
+                    ? res.json().then(event => Promise.reject(event))
+                    : res
+            )
+    },
+
     getPost(post_id) {
         return fetch(`${config.API_ENDPOINT}/post/${post_id}`, {
             headers: {
