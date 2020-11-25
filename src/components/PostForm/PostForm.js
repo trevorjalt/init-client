@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import InitContentContext from '../../contexts/initContentContext'
 import InitContentApiService from '../../services/init-content-api-service'
-import PhotoUpload from '../PhotoUpload/PhotoUpload'
+import ProjectUpload from '../ProjectUpload/ProjectUpload'
 // import '../../css/AvatarForm.css'
 
 
@@ -27,13 +27,13 @@ class PostForm extends Component {
     handleSubmit = (ev) => {
         ev.preventDefault()
         // const currentPost= this.state.currentAvatar
-        // const { setData } = this.context
+        const { setProjectData } = this.context
 
 
         InitContentApiService.postInitProject(ev.target)
             // .then(setCurrentAvatar())
             .then(() => this.props.history.push('/portfolio'))
-            // .then(setData())
+            .then(setProjectData())
             .catch(error => {
                 this.setState({ error })
             })
@@ -42,7 +42,7 @@ class PostForm extends Component {
 
     render() {
         const { error } = this.state
-        // const { data } = this.context
+        const { projectData } = this.context
         // const currentAvatar = this.state.currentAvatar
         // console.log('avatar', currentAvatar)
 
@@ -59,7 +59,7 @@ class PostForm extends Component {
                 >
                     {error && <p>{error.message}</p>}
                 </div>
-                <PhotoUpload />
+                <ProjectUpload />
                 <div className='project-form-input'>
                     <label 
                         htmlFor='init-project-title-input'
@@ -140,7 +140,7 @@ class PostForm extends Component {
                 <button 
                     type='submit'
                     className='project-form-submit-button'
-                    // disabled={!data}
+                    disabled={!projectData}
                 >
                     Upload
                 </button>
