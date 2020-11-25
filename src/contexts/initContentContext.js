@@ -8,17 +8,17 @@ const InitContentContext = React.createContext({
     data: null,
     // currentAvatar: {},
     // setCurrentAvatar: () => {},
-    setData: () => {},
+    setData: () => { },
 })
 
 export default InitContentContext
 
 export class InitContentProvider extends Component {
     state = {
-      data: null,
-    //   currentAvatar: {}
-    }  
-    
+        data: null,
+        //   currentAvatar: {}
+    }
+
     // componentDidMount() {
     //     // this.context.clearError()
     //     InitContentApiService.getAvatar()
@@ -31,7 +31,6 @@ export class InitContentProvider extends Component {
     // }
 
     setData = () => {
-        console.log('setting data')
         this.setState({ data: !this.state.data })
     }
 
