@@ -48,6 +48,10 @@ export class UserProvider extends Component {
             TokenService.queueCallbackBeforeExpiry(() => {
                 this.fetchRefreshToken()
             })
+
+            if (!this.state.isLoggedIn) {
+                this.setIsLoggedIn()
+            }
         }
     }
 
@@ -88,7 +92,7 @@ export class UserProvider extends Component {
         TokenService.queueCallbackBeforeExpiry(() => {
             this.fetchRefreshToken()
         })
-        this.setIsLoggedIn()
+        this.setIsLoggedIn(true)
     }
 
     processLogout = () => {
@@ -96,7 +100,7 @@ export class UserProvider extends Component {
         TokenService.clearCallbackBeforeExpiry()
         IdleService.unRegisterIdleResets()
         console.log('this ran at line 98')
-        this.setIsLoggedIn()
+        this.setIsLoggedIn(false)
         this.setUser({})
 
     }
