@@ -17,6 +17,14 @@ export default function useBookSearch(observed, pageNumber, limit) {
     //How do we know to stop loading more? This guy right here will do just that
     const [hasMore, setHasMore] = useState(false);
 
+    //This is here to handle a bug
+    //Basically everytime the query changes the old return simply appends the new query to it
+    //So the old search never goes away
+    //With this we are defaulting to a blank array everytime the query changes
+    useEffect(() => {
+        setResults([])
+    }, [observed]);
+
     //This is neat... whenever the param (observer) changes then the axios call is made
     useEffect(() => {
         //Everytime we make a request we have to trigger our loading thingy
