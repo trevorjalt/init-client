@@ -6,19 +6,33 @@ import React, { Component } from 'react'
 
 const InitContentContext = React.createContext({
     data: null,
+    projectData: null,
     // currentAvatar: {},
     // setCurrentAvatar: () => {},
+<<<<<<< HEAD
     setData: () => { },
+=======
+    setData: () => {},
+    setProjectData: () => {},
+>>>>>>> 02793aeb6e0ef2b616b08612488b92cb13139c31
 })
 
 export default InitContentContext
 
 export class InitContentProvider extends Component {
     state = {
+<<<<<<< HEAD
         data: null,
         //   currentAvatar: {}
     }
 
+=======
+      data: null,
+      projectData: null,
+    //   currentAvatar: {}
+    }  
+    
+>>>>>>> 02793aeb6e0ef2b616b08612488b92cb13139c31
     // componentDidMount() {
     //     // this.context.clearError()
     //     InitContentApiService.getAvatar()
@@ -34,12 +48,19 @@ export class InitContentProvider extends Component {
         this.setState({ data: !this.state.data })
     }
 
+    setProjectData = () => {
+        console.log('setting project data')
+        this.setState({ projectData: !this.state.projectData })
+    }
+
     render() {
         const value = {
             // currentAvatar: this.state.currentAvatar,
             data: this.state.data,
+            projectData: this.state.projectData,
             // setCurrentAvatar: this.setCurrentAvatar,
             setData: this.setData,
+            setProjectData: this.setProjectData,
         }
         return (
             <InitContentContext.Provider value={value}>
