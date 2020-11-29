@@ -4,6 +4,8 @@
 
 This is a repository for the `Init client`.
 
+View the live version [here](https://init-blush.vercel.app/)
+
 View the repository for the server [here](https://github.com/trevorjalt/init-api).
 
 `Init` was created by [Adyceum Magna Ccarri](https://github.com/i-MCcarri), [Rachel Reilly](https://github.com/Rachanastasia), [Steven Henderson](https://github.com/Hendoe), and [Trevor J Alt](https://github.com/trevorjalt).
