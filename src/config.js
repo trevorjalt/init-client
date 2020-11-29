@@ -2,7 +2,7 @@ let apiPath
 let tokenKey
 
 if (process.env.NODE_ENV === 'production') {
-    apiPath = 'future server path'
+    apiPath = 'https://init-team-api.herokuapp.com/api'
     tokenKey = 'init-client-auth-token'
 } else {
     apiPath = 'http://localhost:8000/api'
