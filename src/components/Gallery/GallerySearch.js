@@ -1,3 +1,5 @@
+import config from '../../config';
+
 // Want to understand this better? try this video https://www.youtube.com/watch?v=NZKUirTtxcg
 
 //useEffect takes in two arguments, one being a function and the other being variables
@@ -36,7 +38,7 @@ export default function useGallerySearch(observed, pageNumber, limit) {
         console.log('what are we working with', observed, pageNumber, limit)
         axios({
             method: 'GET',
-            url: 'http://localhost:8000/api/post/download',
+            url: `${config.API_ENDPOINT}/post/download`,
             headers: {
                 'authorization': `bearer ${TokenService.getAuthToken()}`
             },
@@ -75,5 +77,5 @@ export default function useGallerySearch(observed, pageNumber, limit) {
         })
         return () => cancel()
     }, [pageNumber]);
-    return { loading, error, results, hasMore};
+    return { loading, error, results, hasMore };
 };
